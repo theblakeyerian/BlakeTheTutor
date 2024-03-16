@@ -1,0 +1,341 @@
+/* ---------------------- */
+/* Custom properties      */
+/* ---------------------- */
+
+:root{
+	/* Colors */
+	--c-primary: 116, 170, 130;
+	--c-accent: 89, 76, 68;
+	--c-light-accent: 189, 178, 158;
+	--c-light: 255, 254, 242;
+	--c-dark: 7, 6, 3;
+
+	/* Font Sizes */
+	--fs-900: 9.375rem;
+	--fs-800: 6.25rem;
+	--fs-700: 3.5rem;
+	--fs-650: 2.25rem;
+	--fs-600: 2rem;
+	--fs-500: 1.75rem;
+	--fs-450: 1.5rem;
+	--fs-400: 1.125rem;
+	--fs-300: 1rem;
+	--fs-200: 0.875rem;
+
+	/* Font Families */
+	--ff-display: 'Poiret One', sans-serif;
+	--ff-sans: 'Barlow', sans-serif;
+	--ff-sans-cond: "Barlow Condensed", sans-serif;
+}
+
+/* ---------------------- */
+/* Reset                  */
+/* ---------------------- */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;	
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+picture,
+figure {
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p{
+	font-weight: 400;
+}
+
+/* Remove list styles */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  background-color: rgb( var(--c-light) );
+  color: rgb( var(--c-dark) );
+  font-family: var(--ff-sans);
+  font-size: var(--fs-400);
+  overflow-x: hidden;
+}
+
+/* Links that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+figure {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+/* Make forms elements inherit font */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------------------- */
+/* Utility Classes        */
+/* ---------------------- */
+
+/* Colors */
+.bg-dark { background-color: rgb( var(--c-dark) );}
+.bg-primary { background-color: rgba( var(--c-primary) )!important; }
+.bg-accent { background-color: rgb( var(--c-accent) );}
+.bg-light-accent { background-color: rgb( var(--c-light-accent) );}
+.bg-light { background-color: rgb( var(--c-light) )!important;}
+
+.text-dark { color: rgb( var(--c-dark) );}
+.text-primary { color: rgb( var(--c-primary) );}
+.text-accent { color: rgb( var(--c-accent) );}
+.text-light-accent {color: rgb( var(--c-light-accent) );}
+
+a.text-accent:hover,
+a.text-accent:focus{
+	color: rgb( var(--c-light-accent) / .65 ) ;
+}
+
+/* Typography */
+.ff-display { font-family: var(--ff-display); }
+.ff-sans-cond { font-family: var(--ff-sans-cond); }
+.ff-sans { font-family: var(--ff-sans); }
+
+.letter-spacing-1 { letter-spacing: 4.75px; }
+.letter-spacing-2 { letter-spacing: 2.7px; }
+.letter-spacing-3 { letter-spacing: 2.35px; }
+
+.upper { text-transform: uppercase; }
+
+.fs-900 { font-size: var(--fs-900); }
+.fs-800 { font-size: var(--fs-800); }
+.fs-700 { font-size: var(--fs-700); }
+.fs-600 { font-size: var(--fs-600); }
+.fs-500 { font-size: var(--fs-500); }
+.fs-450 { font-size: var(--fs-450); }
+.fs-400 { font-size: var(--fs-400); }
+.fs-300 { font-size: var(--fs-300); }
+.fs-200 { font-size: var(--fs-200); }
+
+.fs-900,
+.fs-800,
+.fs-700,
+.fs-600 {
+	line-height: 1.1;
+}
+
+/* Components */
+
+figure {
+	position: relative;
+}
+
+button {
+	padding: .75em;
+	border: none;
+	font-size: 18px;
+}
+
+button:hover {
+	opacity: .75;
+	font-size: 18.5px;
+}
+	
+button a {
+	text-decoration: none;
+}
+
+/* ---------------------- */
+/* Layout                 */
+/* ---------------------- */
+
+section {
+	padding: 3em;
+	max-width: 100vw;
+}
+
+section.tight{
+	padding: 0;
+}
+
+main {
+	min-height: 80vh;
+}
+
+.fullWidth {
+	width: 100vw;
+	max-width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+
+	section {
+		padding: 1.5em;
+	}
+
+}
+
+/* ---------------------- */
+/* Header                 */
+/* ---------------------- */
+
+#pageHeader {
+	padding: 1em;
+}
+
+/* ---------------------- */
+/* Body			              */
+/* ---------------------- */
+/* Cover */
+.cover-head {
+	padding: 2em;
+	width: 70%;
+	background-color: rgba(var(--c-light-accent), .3);
+	text-align: center;
+}
+
+.cover-head *{
+	margin: .5em;
+}
+
+#cover {
+	min-height: 30em;
+	width: 100%;
+	background-image: url("../img/cover.jpg");
+}
+
+/* About */
+#about .image-wrapper {
+	padding: 0 5%;
+	max-width: 400px;
+}
+
+#about h2 {
+	padding: .5em;
+	border-bottom: 2px solid rgb( var(--c-dark) );
+	margin-bottom: 1em;
+}
+
+/* Services */
+.services-bg {
+	background-image: url("../img/triangles.jpg");
+	background-size: cover;
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.services-wrapper {
+	width: 100%;
+	position: relative;
+	z-index: 1;
+}
+
+#services {
+	background-color: rgba( var(--c-primary), .95 );
+	padding: 5em 0em 5em;
+}
+
+#services div:first-child {
+	border-right: 2px solid rgb( var(--c-light) );
+	margin-right: .5em;
+}
+
+@media (max-width: 768px) {
+	#services div:first-child {
+		border: none;
+		margin-bottom: .5em;
+		border-bottom: 2px solid rgb( var(--c-light) );
+	}
+
+	#services div {
+		text-align: center;
+	}
+}
+
+/* Book */
+#book h1{
+	font-size: var(--fs-700);
+	margin-bottom: 15px;
+}
+
+#book .price {
+	color: rgba( var(--c-primary), .5 );
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+	#book .text-wrapper {
+		text-align: center;
+	}
+}
+
+/* ---------------------- */
+/* Footer                 */
+/* ---------------------- */
+footer {
+	padding: 5em;
+}
+
+@media (max-width: 768px) {
+	footer div {
+		margin: 2em;
+	}
+}
+
+
+
