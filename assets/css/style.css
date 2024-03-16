@@ -333,7 +333,8 @@ footer {
 
 @media (max-width: 768px) {
 	footer div {
-		margin-top: .5em;
+		margin-top: 1em;
+		margin-bottom: 1em;
 	}
 
 	footer {
