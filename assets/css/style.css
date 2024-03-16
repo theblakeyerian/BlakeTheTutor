@@ -333,7 +333,11 @@ footer {
 
 @media (max-width: 768px) {
 	footer div {
-		margin: 2em;
+		margin-top: .5em;
+	}
+
+	footer {
+		text-align: center;
 	}
 }
 
