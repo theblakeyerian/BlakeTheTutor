@@ -221,6 +221,12 @@ main {
 		padding: 1.5em;
 	}
 
+	main {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
 }
 
 /* ---------------------- */
@@ -321,6 +327,7 @@ main {
 @media (max-width: 768px) {
 	#book .text-wrapper {
 		text-align: center;
+		margin-top: 1em;
 	}
 }
 
