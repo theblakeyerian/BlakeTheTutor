@@ -301,6 +301,10 @@ main {
 	margin-right: .5em;
 }
 
+#services h3 {
+	margin-bottom: .5em;
+}
+
 @media (max-width: 768px) {
 	#services div:first-child {
 		border: none;
