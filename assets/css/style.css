@@ -241,23 +241,6 @@ main {
 /* ---------------------- */
 /* Body			              */
 /* ---------------------- */
-/* Cover */
-.cover-head {
-	padding: 2em;
-	width: 70%;
-	background-color: rgba(var(--c-light-accent), .3);
-	text-align: center;
-}
-
-.cover-head *{
-	margin: .5em;
-}
-
-#cover {
-	min-height: 30em;
-	width: 100%;
-	background-image: url("../img/cover.jpg");
-}
 
 /* About */
 #about .image-wrapper {
@@ -273,7 +256,7 @@ main {
 
 /* Services */
 .services-bg {
-	background-image: url("../img/triangles.jpg");
+	background-image: url("../img/greenbg.jpeg");
 	background-size: cover;
 	position: absolute;
 	z-index: -1;
@@ -292,8 +275,15 @@ main {
 }
 
 #services {
-	background-color: rgba( var(--c-primary), .95 );
-	padding: 5em 0em 5em;
+	background-color: rgba( var(--c-primary), .9 );
+	padding: 3em 0em 3em;
+}
+
+#services h2 {
+	margin-bottom: 1.5em;
+	padding-bottom: .25em;
+	text-align: center;
+	border-bottom: 2px solid white;
 }
 
 #services div:first-child {
