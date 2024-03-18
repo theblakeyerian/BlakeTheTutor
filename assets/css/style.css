@@ -231,14 +231,6 @@ main {
 }
 
 /* ---------------------- */
-/* Header                 */
-/* ---------------------- */
-
-#pageHeader {
-	padding: 1em;
-}
-
-/* ---------------------- */
 /* Body			              */
 /* ---------------------- */
 
@@ -248,7 +240,7 @@ main {
 	max-width: 400px;
 }
 
-#about h2 {
+#about h1 {
 	padding: .5em;
 	border-bottom: 2px solid rgb( var(--c-dark) );
 	margin-bottom: 1em;
@@ -275,7 +267,7 @@ main {
 }
 
 #services {
-	background-color: rgba( var(--c-primary), .9 );
+	background-color: rgba( var(--c-primary), .95 );
 	padding: 3em 0em 3em;
 }
 
@@ -314,7 +306,7 @@ main {
 }
 
 #book .price {
-	color: rgba( var(--c-primary), .5 );
+	color: rgba( var(--c-primary), .7 );
 	font-weight: bold;
 	margin-bottom: 15px;
 }
