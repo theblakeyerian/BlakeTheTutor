@@ -4,10 +4,10 @@
 
 :root{
 	/* Colors */
-	--c-primary: 116, 170, 130;
+	--c-primary: 23, 23, 72;
 	--c-accent: 89, 76, 68;
 	--c-light-accent: 189, 178, 158;
-	--c-light: 255, 255, 255;
+	--c-light: 235, 235, 255;
 	--c-dark: 7, 6, 3;
 
 	/* Font Sizes */
@@ -268,7 +268,7 @@ main {
 
 #services {
 	background-color: rgba( var(--c-primary), .95 );
-	padding: 3em 0em 3em;
+	padding: 1.5em 0em 1.5em;
 }
 
 #services h2 {
@@ -315,25 +315,6 @@ main {
 	#book .text-wrapper {
 		text-align: center;
 		margin-top: 1em;
-	}
-}
-
-/* ---------------------- */
-/* Footer                 */
-/* ---------------------- */
-footer {
-	padding: 5em;
-	max-width: 100vw;
-}
-
-@media (max-width: 768px) {
-	footer div {
-		margin-top: 1em;
-		margin-bottom: 1em;
-	}
-
-	footer {
-		text-align: center;
 	}
 }
 
