@@ -1,12 +1,4 @@
 <!DOCTYPE html>
-<style>
-    .phone-number {
-        display: flex;
-        justify-content: center; /* Center horizontally */
-        align-items: center; /* Center vertically */
-        height: 20vh; /* Adjust the height as needed */
-    }
-</style>
 
 <html lang="en">
 
@@ -17,7 +9,7 @@
 
 		<!-- Logo and Title -->
 		<link rel="shortcut icon" type="image/x-icon" href="assets/img/logo.png" />
-		<title>Blake The Tutor</title>
+		<title>Blake's Tutoring</title>
 
 		<!-- Import Bootstrap -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -105,15 +97,35 @@
 						</ul>
 
 					</div>
-					<div class="phone-number">
-    					<h2>(425) - 892 - 4390</h2>
-					</div>
+
+				</section>
 
 			</div>
+
+			<section id="book" class="row d-flex align-items-center justify-content-center">
+
+				<div class="col-sm-5">
+
+					<div class="calendly-inline-widget" data-url="https://calendly.com/familyyerian/1hour" style="min-width:320px;height:700px;"></div>
+
+				</div>
+
+				<div class="col-sm-5 text-wrapper">
+
+					<h1>Schedule an Appointment</h1>
+					<p class="price">$50.00</p>
+					<p>Schedule a 1 on 1 appointment, can set up zoom integration and add payment (stripe and paypal) here on the calendar</p>
+					<p>Or contact me at <span class="number">(425) - 892 - 4390</span></p>
+					
+				</div>
+
+			</section>
 
 		</main>
 
 	</body>
 
+	<!-- Import script for calendly widget -->
+	<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
 </html>
