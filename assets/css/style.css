@@ -320,12 +320,20 @@ main {
 	margin-bottom: 15px;
 }
 
+#book p {
+	margin: 10px;
+}
+
+#book .number {
+	color: rgba( var(--c-primary), .9);
+	font-weight: bold;
+	border-bottom: 0.5px dashed rgba( var(--c-primary), .4 );
+	margin-top: 5px;
+}
+
 @media (max-width: 768px) {
 	#book .text-wrapper {
 		text-align: center;
 		margin-top: 1em;
 	}
 }
-
-
-
