@@ -1,0 +1,80 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "mount_file_id": "1DufJ8uuCOFIXSonl-deo4m-vEujeSSdb",
+      "authorship_tag": "ABX9TyN5w8qiXiWKFVnNw+6cU2iM",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/theblakeyerian/BlakeTheTutor/blob/main/PrimeNumberGenerator\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 6,
+      "metadata": {
+        "id": "A0zECDk0nP84",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "9943c5f5-5594-4d7d-86d2-6705ceed183f"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1, 2, 3, 5, 8, 9, 11, 12, 15, 17, 20, 21, 23, 27, 29, 32, 33, 35, 36, 39, 41, 44, 45, 47]\n"
+          ]
+        }
+      ],
+      "source": [
+        "counters = [[1, 1]]\n",
+        "for t in range(2, 50):\n",
+        "    if not any(c[1] == 0 for c in counters):\n",
+        "        counters.append([t, t])\n",
+        "    counters = [[c[0], c[1] - 1 if c[1] != 0 else c[0]] for c in counters]\n",
+        "    counters[0][1] = 1\n",
+        "result = [c[0] for c in counters]\n",
+        "\n",
+        "print(result)\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "o3ShaMHWnmIE"
+      },
+      "execution_count": 1,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "Den4uDJ9pAhi"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
