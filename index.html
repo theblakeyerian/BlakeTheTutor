@@ -1,321 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blake the Tutor - Professional, Private Tutoring</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blake the Tutor - Professional, Private Tutoring</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            position: relative;
-        }
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-image: 
+        radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 2px, transparent 2px),
+        radial-gradient(circle at 75% 75%, rgba(255,255,255,0.1) 2px, transparent 2px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: -1;
+    }
 
-        /* Subtle background pattern */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 2px, transparent 2px),
-                radial-gradient(circle at 75% 75%, rgba(255,255,255,0.1) 2px, transparent 2px);
-            background-size: 60px 60px;
-            pointer-events: none;
-            z-index: -1;
-        }
+    .navbar {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      padding: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            margin-top: 40px;
-            margin-bottom: 40px;
-        }
+    .navbar ul {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      list-style: none;
+    }
 
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+    .navbar a {
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
 
-        .profile-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid #667eea;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
-        }
+    .navbar a:hover { color: #ffd86b; }
 
-        .profile-image:hover {
-            transform: scale(1.05);
-        }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 40px 20px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
 
-        .main-title {
-            font-size: 2.8rem;
-            font-weight: 700;
-            color: #2c3e50;
-            margin-bottom: 10px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+    .profile-image {
+      width: 150px; height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #667eea;
+      margin-bottom: 20px;
+    }
 
-        .subtitle {
-            font-size: 1.2rem;
-            color: #7f8c8d;
-            margin-bottom: 30px;
-            font-weight: 300;
-        }
+    .main-title {
+      font-size: 2.8rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
 
-        .intro-text {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: #34495e;
-            margin-bottom: 30px;
-            text-align: center;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+    .subtitle { font-size: 1.2rem; color: #7f8c8d; margin-bottom: 30px; }
 
-        .cta-section {
-            text-align: center;
-            margin: 40px 0;
-            padding: 30px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 15px;
-            color: white;
-        }
+    .intro-text {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #34495e;
+      margin-bottom: 30px;
+    }
 
-        .cta-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
+    .cta-button {
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding: 15px 30px;
+      color: #fff;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .cta-button:hover { transform: translateY(-3px); }
 
-        .phone-number {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #fff;
-            text-decoration: none;
-            display: inline-block;
-            padding: 15px 30px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
 
-        .phone-number:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
+    .highlight-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
 
-        .disciplines-section {
-            margin-top: 50px;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            font-weight: 600;
-            color: #2c3e50;
-            text-align: center;
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 2px;
-        }
-
-        .disciplines-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .discipline-card {
-            background: #fff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-            border-left: 5px solid #667eea;
-            transition: all 0.3s ease;
-        }
-
-        .discipline-card:nth-child(2) {
-            border-left-color: #e74c3c;
-        }
-
-        .discipline-card:nth-child(3) {
-            border-left-color: #f39c12;
-        }
-
-        .discipline-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-        }
-
-        .discipline-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-        }
-
-        .discipline-title::before {
-            content: '';
-            width: 8px;
-            height: 8px;
-            background: currentColor;
-            border-radius: 50%;
-            margin-right: 12px;
-        }
-
-        .discipline-list {
-            list-style: none;
-        }
-
-        .discipline-list li {
-            padding: 8px 0;
-            color: #555;
-            font-size: 1rem;
-            position: relative;
-            padding-left: 20px;
-        }
-
-        .discipline-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #667eea;
-            font-weight: bold;
-        }
-
-        .discipline-card:nth-child(2) .discipline-list li::before {
-            color: #e74c3c;
-        }
-
-        .discipline-card:nth-child(3) .discipline-list li::before {
-            color: #f39c12;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                margin: 20px;
-                padding: 30px 20px;
-            }
-
-            .main-title {
-                font-size: 2.2rem;
-            }
-
-            .phone-number {
-                font-size: 1.4rem;
-                padding: 12px 25px;
-            }
-
-            .disciplines-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .profile-image {
-                width: 120px;
-                height: 120px;
-            }
-        }
-    </style>
+    .highlight-card:hover { transform: translateY(-5px); }
+    .highlight-card h3 { margin-bottom: 10px; color: #2c3e50; }
+    .highlight-card a { color: #667eea; font-weight: 600; text-decoration: none; }
+    .highlight-card a:hover { text-decoration: underline; }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <img src="assets/img/mainprofile.png" alt="Blake the Tutor" class="profile-image">
-            <h1 class="main-title">Blake the Tutor</h1>
-            <p class="subtitle">Professional, Private Tutoring</p>
-        </div>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="lessons.html">Lessons</a></li>
+      <li><a href="schedule.html">Scheduling</a></li>
+    </ul>
+  </nav>
 
-        <p class="intro-text">
-            Welcome to my corner of academia! I am a private tutor specializing in undergraduate and AP high school math and hard sciences, and <i>love</i> branching into history, geography, and life skills. I'm here to help with your entire schedule, 1 on 1, with the hardest subjects your institution throws at you. Education is not a solo practice, let's do this together!
-        </p>
+  <!-- Main content -->
+  <div class="container">
+    <img src="assets/img/mainprofile.png" alt="Blake the Tutor" class="profile-image">
+    <h1 class="main-title">Blake the Tutor</h1>
+    <p class="subtitle">Professional, Private Tutoring</p>
 
-        <div class="cta-section">
-            <h2 class="cta-title">Ready to get started?</h2>
-            <a href="tel:+14258924390" class="phone-number">(425) 892-4390</a>
-        </div>
+    <p class="intro-text">
+      Welcome! I provide one-on-one tutoring in math, science, and beyond — helping you master challenging subjects with clarity and confidence. Let's tackle your toughest classes together.
+    </p>
 
-        <div class="disciplines-section">
-            <h2 class="section-title">My Specialties</h2>
-            
-            <div class="disciplines-grid">
-                <div class="discipline-card">
-                    <h3 class="discipline-title">Mathematics</h3>
-                    <ul class="discipline-list">
-                        <li>Algebra</li>
-                        <li>Geometry</li>
-                        <li>Trigonometry</li>
-                        <li>Calculus</li>
-                        <li>Linear Algebra</li>
-                        <li>Statistics</li>
-                    </ul>
-                </div>
+    <a href="schedule.html"><button class="cta-button">Book a Lesson</button></a>
 
-                <div class="discipline-card">
-                    <h3 class="discipline-title">Sciences</h3>
-                    <ul class="discipline-list">
-                        <li>Physics I, II</li>
-                        <li>Electricity and Magnetism</li>
-                        <li>General Chemistry</li>
-                        <li>Organic Chemistry</li>
-                        <li>Biology</li>
-                    </ul>
-                </div>
-
-                <div class="discipline-card">
-                    <h3 class="discipline-title">Additional Subjects</h3>
-                    <ul class="discipline-list">
-                        <li>Programming</li>
-                        <li>Music Theory</li>
-                        <li>Master Gardening</li>
-                        <li>Macro Economics</li>
-                        <li>Series 7</li>
-                        <li>SAT/ACT</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    <div class="highlights">
+      <div class="highlight-card">
+        <h3>About Me</h3>
+        <p>Learn about my background, teaching philosophy, and approach to tutoring.</p>
+        <a href="about.html">Read more →</a>
+      </div>
+      <div class="highlight-card">
+        <h3>Lessons</h3>
+        <p>Explore the wide range of subjects I specialize in, from math to sciences and more.</p>
+        <a href="lessons.html">See lessons →</a>
+      </div>
+      <div class="highlight-card">
+        <h3>Scheduling</h3>
+        <p>Find a time that works for you. Simple, flexible scheduling options available.</p>
+        <a href="schedule.html">Schedule now →</a>
+      </div>
     </div>
+  </div>
 </body>
 </html>
