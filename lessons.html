@@ -75,7 +75,54 @@
       color: #555;
     }
     
-    @media (max-width: 768px) {
+    .coming-soon {
+      opacity: 0.8;
+      position: relative;
+    }
+    
+    .coming-soon-placeholder {
+      height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+      border-radius: 8px;
+      border: 2px dashed #ccc;
+    }
+    
+    .coming-soon-icon {
+      font-size: 3em;
+      margin-bottom: 15px;
+      opacity: 0.7;
+    }
+    
+    .coming-soon-text h4 {
+      margin: 0 0 10px 0;
+      color: #555;
+      font-size: 1.2em;
+    }
+    
+    .coming-soon-text p {
+      margin: 0 0 15px 0;
+      color: #777;
+      font-size: 0.9em;
+      line-height: 1.4;
+      max-width: 280px;
+    }
+    
+    .coming-soon-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      background: #ffd54f;
+      color: #333;
+      border-radius: 20px;
+      font-size: 0.8em;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
       .playlist-grid {
         grid-template-columns: 1fr;
       }
@@ -123,43 +170,37 @@
         <div class="playlist-card">
           <iframe 
             class="playlist-embed"
-            src="https://www.youtube.com/watch?v=HBXGzOEC5to&list=PLXiqi0yQMt-hLqF8JCC2ptf8K_SUhZ3dU"
-            title="Calculus 1"
+            src="https://www.youtube.com/watch?v=HBXGzOEC5to"
+            title="Mathematics Fundamentals : Calculus 1 Playlist"
             allowfullscreen>
           </iframe>
           <div class="playlist-info">
-            <h4>Calculus 1</h4>
-            <p>Essential math concepts explained step-by-step, perfect for building a strong foundation in algebra and beyond.</p>
-            <a href="https://www.youtube.com/watch?v=HBXGzOEC5to&list=PLXiqi0yQMt-hLqF8JCC2ptf8K_SUhZ3dU" class="playlist-link" target="_blank">Watch Full Playlist</a>
+            <h4>Mathematics Fundamentals : Calculus 1</h4>
+            <p>Essential calculus, the first step into putting a lifetime of learned mathematics to real world use.</p>
+            <a href="https://www.youtube.com/watch?v=HBXGzOEC5to" class="playlist-link" target="_blank">Watch Full Playlist</a>
           </div>
         </div>
         
-        <!-- Add more playlist cards as you create them -->
-        <div class="playlist-card">
-          <iframe 
-            class="playlist-embed"
-            src="https://www.youtube.com/embed/videoseries?list=YOUR_PHYSICS_PLAYLIST_ID"
-            title="Physics Concepts Playlist"
-            allowfullscreen>
-          </iframe>
-          <div class="playlist-info">
-            <h4>Physics Concepts</h4>
-            <p>Complex physics topics broken down into digestible lessons with real-world applications and examples.</p>
-            <a href="#" class="playlist-link" target="_blank">Coming Soon</a>
+        <!-- Coming Soon playlist cards -->
+        <div class="playlist-card coming-soon">
+          <div class="coming-soon-placeholder">
+            <div class="coming-soon-icon">🎥</div>
+            <div class="coming-soon-text">
+              <h4>Physics Concepts</h4>
+              <p>Complex physics topics broken down into digestible lessons with real-world applications and examples.</p>
+              <div class="coming-soon-badge">Coming Soon</div>
+            </div>
           </div>
         </div>
         
-        <div class="playlist-card">
-          <iframe 
-            class="playlist-embed"
-            src="https://www.youtube.com/embed/videoseries?list=YOUR_CHEMISTRY_PLAYLIST_ID"
-            title="Chemistry Mastery Playlist"
-            allowfullscreen>
-          </iframe>
-          <div class="playlist-info">
-            <h4>Chemistry Mastery</h4>
-            <p>From general chemistry basics to organic chemistry mechanisms, master the fundamentals with clear explanations.</p>
-            <a href="#" class="playlist-link" target="_blank">Coming Soon</a>
+        <div class="playlist-card coming-soon">
+          <div class="coming-soon-placeholder">
+            <div class="coming-soon-icon">🧪</div>
+            <div class="coming-soon-text">
+              <h4>Chemistry Mastery</h4>
+              <p>From general chemistry basics to organic chemistry mechanisms, master the fundamentals with clear explanations.</p>
+              <div class="coming-soon-badge">Coming Soon</div>
+            </div>
           </div>
         </div>
       </div>
