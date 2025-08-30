@@ -162,12 +162,19 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
+    
+    @media (max-width: 768px) {
       .playlist-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
       }
       
-      .playlist-embed {
-        height: 180px;
+      .video-thumbnail {
+        height: 250px;
+      }
+      
+      .coming-soon-placeholder {
+        height: 250px;
       }
     }
   </style>
