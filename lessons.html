@@ -5,6 +5,86 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lessons - Blake the Tutor</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .playlist-section {
+      margin-top: 40px;
+      padding: 30px 0;
+      border-top: 2px solid #e1e1e1;
+    }
+    
+    .playlist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 25px;
+      margin-top: 25px;
+    }
+    
+    .playlist-card {
+      background: #f9f9f9;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .playlist-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    }
+    
+    .playlist-embed {
+      width: 100%;
+      height: 200px;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 15px;
+    }
+    
+    .playlist-info h4 {
+      margin: 0 0 8px 0;
+      color: #333;
+      font-size: 1.2em;
+    }
+    
+    .playlist-info p {
+      margin: 0;
+      color: #666;
+      font-size: 0.9em;
+      line-height: 1.4;
+    }
+    
+    .playlist-link {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background: #ff6b6b;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.9em;
+      transition: background 0.3s ease;
+    }
+    
+    .playlist-link:hover {
+      background: #ff5252;
+    }
+    
+    .section-intro {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #555;
+    }
+    
+    @media (max-width: 768px) {
+      .playlist-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .playlist-embed {
+        height: 180px;
+      }
+    }
+  </style>
 </head>
 <body>
   <nav class="navbar">
@@ -32,6 +112,56 @@
       <div class="highlight-card">
         <h3>Additional Subjects</h3>
         <p>Programming, Music Theory, Master Gardening, Economics, Series 7, SAT/ACT prep</p>
+      </div>
+    </div>
+
+    <div class="playlist-section">
+      <h2>Featured Video Lessons</h2>
+      <p class="section-intro">Watch my teaching in action with these curated playlists covering key topics</p>
+      
+      <div class="playlist-grid">
+        <div class="playlist-card">
+          <iframe 
+            class="playlist-embed"
+            src="https://www.youtube.com/embed/videoseries?list=PLrAXtmRdnEQqDapd6t6xDiGGo68M4m3vP"
+            title="Mathematics Fundamentals Playlist"
+            allowfullscreen>
+          </iframe>
+          <div class="playlist-info">
+            <h4>Mathematics Fundamentals</h4>
+            <p>Essential math concepts explained step-by-step, perfect for building a strong foundation in algebra and beyond.</p>
+            <a href="https://youtu.be/HBXGzOEC5to?si=JuJQnKPw9dRsvzxK" class="playlist-link" target="_blank">Watch Full Playlist</a>
+          </div>
+        </div>
+        
+        <!-- Add more playlist cards as you create them -->
+        <div class="playlist-card">
+          <iframe 
+            class="playlist-embed"
+            src="https://www.youtube.com/embed/videoseries?list=YOUR_PHYSICS_PLAYLIST_ID"
+            title="Physics Concepts Playlist"
+            allowfullscreen>
+          </iframe>
+          <div class="playlist-info">
+            <h4>Physics Concepts</h4>
+            <p>Complex physics topics broken down into digestible lessons with real-world applications and examples.</p>
+            <a href="#" class="playlist-link" target="_blank">Coming Soon</a>
+          </div>
+        </div>
+        
+        <div class="playlist-card">
+          <iframe 
+            class="playlist-embed"
+            src="https://www.youtube.com/embed/videoseries?list=YOUR_CHEMISTRY_PLAYLIST_ID"
+            title="Chemistry Mastery Playlist"
+            allowfullscreen>
+          </iframe>
+          <div class="playlist-info">
+            <h4>Chemistry Mastery</h4>
+            <p>From general chemistry basics to organic chemistry mechanisms, master the fundamentals with clear explanations.</p>
+            <a href="#" class="playlist-link" target="_blank">Coming Soon</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
