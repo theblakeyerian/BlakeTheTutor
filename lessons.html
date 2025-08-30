@@ -32,6 +32,45 @@
       box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
     }
     
+    .video-thumbnail {
+      width: 100%;
+      height: 200px;
+      margin-bottom: 15px;
+    }
+    
+    .thumbnail-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    
+    .thumbnail-placeholder:hover {
+      transform: scale(1.02);
+    }
+    
+    .play-icon {
+      font-size: 3em;
+      color: white;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    .playlist-overlay {
+      color: white;
+      font-size: 1.1em;
+      font-weight: bold;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+    
     .playlist-embed {
       width: 100%;
       height: 200px;
