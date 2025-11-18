@@ -3,214 +3,494 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lessons - Blake the Tutor</title>
+  <title>Lessons & Pricing - Blake the Tutor</title>
+  <meta name="description" content="View subjects, pricing, and packages for Blake the Tutor. Expert tutoring in math, science, test prep and more.">
   <link rel="stylesheet" href="styles.css">
   <style>
+    /* Page-specific styles */
+    .page-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 4rem 0 3rem;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .page-header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+    
+    .page-header p {
+      font-size: 1.2rem;
+      opacity: 0.95;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .subjects-section {
+      margin-bottom: 4rem;
+    }
+    
+    .subjects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .subject-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      transition: all 0.3s;
+      border-left: 4px solid #3498db;
+    }
+    
+    .subject-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    }
+    
+    .subject-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .subject-card h3 {
+      color: #2c3e50;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    
+    .subject-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .subject-list li {
+      padding: 0.5rem 0;
+      color: #666;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .subject-list li:last-child {
+      border-bottom: none;
+    }
+    
+    .subject-list li:before {
+      content: "✓ ";
+      color: #27ae60;
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+    
+    /* Pricing Section */
+    .pricing-section {
+      background: #f8f9fa;
+      padding: 4rem 0;
+      margin-top: 3rem;
+    }
+    
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .pricing-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      text-align: center;
+      transition: all 0.3s;
+      position: relative;
+    }
+    
+    .pricing-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+    
+    .pricing-card.popular {
+      border: 3px solid #3498db;
+      transform: scale(1.05);
+    }
+    
+    .popular-badge {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #3498db;
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    .pricing-card h3 {
+      color: #2c3e50;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+    
+    .price {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #3498db;
+      margin: 1rem 0;
+    }
+    
+    .price-subtext {
+      color: #777;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .features-list {
+      list-style: none;
+      padding: 0;
+      margin: 2rem 0;
+      text-align: left;
+    }
+    
+    .features-list li {
+      padding: 0.75rem 0;
+      color: #666;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .features-list li:before {
+      content: "✓ ";
+      color: #27ae60;
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+    
+    .pricing-cta {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s;
+      width: 100%;
+      margin-top: 1rem;
+    }
+    
+    .pricing-cta:hover {
+      background-color: #2980b9;
+      transform: translateY(-2px);
+    }
+    
+    /* Video Lessons Section */
     .playlist-section {
-      margin-top: 40px;
-      padding: 30px 0;
-      border-top: 2px solid #e1e1e1;
+      padding: 4rem 0;
     }
     
     .playlist-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 25px;
-      margin-top: 25px;
+      gap: 2rem;
+      margin-top: 2rem;
     }
     
     .playlist-card {
-      background: #f9f9f9;
+      background: white;
       border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 1.5rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      transition: all 0.3s;
     }
     
     .playlist-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-    }
-    
-    .video-thumbnail {
-      width: 100%;
-      height: 200px;
-      margin-bottom: 15px;
-    }
-    
-    .thumbnail-placeholder {
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      border-radius: 8px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-    
-    .thumbnail-placeholder:hover {
-      transform: scale(1.02);
-    }
-    
-    .play-icon {
-      font-size: 3em;
-      color: white;
-      margin-bottom: 10px;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    }
-    
-    .playlist-overlay {
-      color: white;
-      font-size: 1.1em;
-      font-weight: bold;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
     }
     
     .playlist-embed {
       width: 100%;
-      height: 200px;
+      height: 220px;
       border-radius: 8px;
       border: none;
-      margin-bottom: 15px;
-    }
-    
-    .playlist-info h4 {
-      margin: 0 0 8px 0;
-      color: #333;
-      font-size: 1.2em;
-    }
-    
-    .playlist-info p {
-      margin: 0;
-      color: #666;
-      font-size: 0.9em;
-      line-height: 1.4;
-    }
-    
-    .playlist-link {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 8px 16px;
-      background: #ff6b6b;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 0.9em;
-      transition: background 0.3s ease;
-    }
-    
-    .playlist-link:hover {
-      background: #ff5252;
-    }
-    
-    .section-intro {
-      text-align: center;
-      margin-bottom: 30px;
-      color: #555;
-    }
-    
-    .coming-soon {
-      opacity: 0.8;
-      position: relative;
+      margin-bottom: 1rem;
     }
     
     .coming-soon-placeholder {
-      height: 260px;
+      width: 100%;
+      height: 220px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
       background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
       border-radius: 8px;
       border: 2px dashed #ccc;
+      margin-bottom: 1rem;
     }
     
     .coming-soon-icon {
-      font-size: 3em;
-      margin-bottom: 15px;
-      opacity: 0.7;
-    }
-    
-    .coming-soon-text h4 {
-      margin: 0 0 10px 0;
-      color: #555;
-      font-size: 1.2em;
-    }
-    
-    .coming-soon-text p {
-      margin: 0 0 15px 0;
-      color: #777;
-      font-size: 0.9em;
-      line-height: 1.4;
-      max-width: 280px;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      opacity: 0.6;
     }
     
     .coming-soon-badge {
-      display: inline-block;
-      padding: 6px 12px;
       background: #ffd54f;
       color: #333;
+      padding: 0.5rem 1rem;
       border-radius: 20px;
-      font-size: 0.8em;
+      font-size: 0.85rem;
       font-weight: bold;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+    }
+    
+    .playlist-info h4 {
+      color: #2c3e50;
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+    }
+    
+    .playlist-info p {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    
+    .playlist-link {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: #e74c3c;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    
+    .playlist-link:hover {
+      background: #c0392b;
+      transform: translateY(-2px);
+    }
+    
+    /* FAQ Section */
+    .faq-section {
+      background: #f8f9fa;
+      padding: 4rem 0;
+    }
+    
+    .faq-grid {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .faq-item {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      border-left: 4px solid #3498db;
+    }
+    
+    .faq-item h4 {
+      color: #2c3e50;
+      margin-bottom: 0.75rem;
+      font-size: 1.1rem;
+    }
+    
+    .faq-item p {
+      color: #666;
+      line-height: 1.6;
+      margin: 0;
     }
     
     @media (max-width: 768px) {
+      .page-header h1 {
+        font-size: 2rem;
+      }
+      
+      .page-header p {
+        font-size: 1rem;
+      }
+      
+      .subjects-grid,
+      .pricing-grid,
       .playlist-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
       }
       
-      .video-thumbnail {
-        height: 250px;
+      .pricing-card.popular {
+        transform: scale(1);
       }
       
-      .coming-soon-placeholder {
-        height: 250px;
+      .price {
+        font-size: 2.5rem;
       }
     }
   </style>
 </head>
 <body>
+  <!-- Navigation -->
   <nav class="navbar">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="lessons.html">Lessons</a></li>
-      <li><a href="schedule.html">Scheduling</a></li>
-    </ul>
+    <div class="nav-container">
+      <div class="logo">Blake the Tutor</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="lessons.html">Lessons</a></li>
+        <li><a href="schedule.html">Scheduling</a></li>
+        <li><a href="schedule.html" class="nav-cta">Book Now</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <div class="container">
-    <h1>Lessons</h1>
-    <p>Here are the areas I specialize in:</p>
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <h1>Subjects & Pricing</h1>
+      <p>Comprehensive tutoring across math, science, test prep, and more. Find the perfect package for your learning goals.</p>
+    </div>
+  </div>
 
-    <div class="highlights">
-      <div class="highlight-card">
-        <h3>Mathematics</h3>
-        <p>Algebra, Geometry, Trigonometry, Calculus, Linear Algebra, Statistics</p>
-      </div>
-      <div class="highlight-card">
-        <h3>Sciences</h3>
-        <p>Physics, General Chemistry, Organic Chemistry, Biology, Electricity & Magnetism</p>
-      </div>
-      <div class="highlight-card">
-        <h3>Additional Subjects</h3>
-        <p>Programming, Music Theory, Master Gardening, Economics, Series 7, SAT/ACT prep</p>
+  <!-- Subjects Section -->
+  <div class="subjects-section">
+    <div class="container">
+      <h2 class="section-title">What I Teach</h2>
+      <div class="subjects-grid">
+        <div class="subject-card">
+          <div class="subject-icon">📐</div>
+          <h3>Mathematics</h3>
+          <ul class="subject-list">
+            <li>Algebra I & II</li>
+            <li>Geometry</li>
+            <li>Trigonometry</li>
+            <li>Pre-Calculus</li>
+            <li>Calculus (AP & College)</li>
+            <li>Linear Algebra</li>
+            <li>Statistics</li>
+          </ul>
+        </div>
+
+        <div class="subject-card">
+          <div class="subject-icon">🔬</div>
+          <h3>Sciences</h3>
+          <ul class="subject-list">
+            <li>Physics (AP & College)</li>
+            <li>General Chemistry</li>
+            <li>Organic Chemistry</li>
+            <li>Biology</li>
+            <li>Electricity & Magnetism</li>
+            <li>Lab Report Help</li>
+          </ul>
+        </div>
+
+        <div class="subject-card">
+          <div class="subject-icon">📝</div>
+          <h3>Test Prep</h3>
+          <ul class="subject-list">
+            <li>SAT Math</li>
+            <li>ACT Math & Science</li>
+            <li>AP Exam Preparation</li>
+            <li>GRE Quantitative</li>
+            <li>College Placement Tests</li>
+          </ul>
+        </div>
+
+        <div class="subject-card">
+          <div class="subject-icon">💻</div>
+          <h3>Additional Subjects</h3>
+          <ul class="subject-list">
+            <li>Programming (Python, Java)</li>
+            <li>Music Theory</li>
+            <li>Economics</li>
+            <li>Series 7 Exam Prep</li>
+            <li>Study Skills & Organization</li>
+          </ul>
+        </div>
       </div>
     </div>
+  </div>
 
-    <div class="playlist-section">
-      <h2>Featured Video Lessons</h2>
-      <p class="section-intro">Watch my teaching in action with these curated playlists covering key topics</p>
+  <!-- Pricing Section -->
+  <div class="pricing-section" id="pricing">
+    <div class="container">
+      <h2 class="section-title">Pricing & Packages</h2>
+      <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto 2rem;">Flexible options to fit your budget and learning needs. All sessions include personalized lesson plans and progress tracking.</p>
+      
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Single Session</h3>
+          <div class="price">$75</div>
+          <div class="price-subtext">per hour</div>
+          <ul class="features-list">
+            <li>One-on-one tutoring</li>
+            <li>Customized lesson plan</li>
+            <li>Online or in-person</li>
+            <li>Homework help</li>
+            <li>Progress notes</li>
+          </ul>
+          <a href="schedule.html"><button class="pricing-cta">Book Session</button></a>
+        </div>
+
+        <div class="pricing-card popular">
+          <div class="popular-badge">Most Popular</div>
+          <h3>5-Session Package</h3>
+          <div class="price">$340</div>
+          <div class="price-subtext">$68/hour • Save $35</div>
+          <ul class="features-list">
+            <li>5 hours of tutoring</li>
+            <li>Everything in Single Session</li>
+            <li>Priority scheduling</li>
+            <li>Email support between sessions</li>
+            <li>Custom study materials</li>
+            <li>Valid for 3 months</li>
+          </ul>
+          <a href="schedule.html"><button class="pricing-cta">Get Started</button></a>
+        </div>
+
+        <div class="pricing-card">
+          <h3>10-Session Package</h3>
+          <div class="price">$625</div>
+          <div class="price-subtext">$62.50/hour • Save $125</div>
+          <ul class="features-list">
+            <li>10 hours of tutoring</li>
+            <li>Everything in 5-Session</li>
+            <li>Test-taking strategies</li>
+            <li>Bi-weekly progress reports</li>
+            <li>Exam preparation roadmap</li>
+            <li>Valid for 6 months</li>
+          </ul>
+          <a href="schedule.html"><button class="pricing-cta">Best Value</button></a>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 2rem;">
+        <p style="color: #666; font-size: 0.95rem;">
+          💳 Payment accepted via Venmo, Zelle, Cash, or Check<br>
+          📅 <strong>First consultation is always FREE</strong> to ensure we're a good fit
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Lessons Section -->
+  <div class="playlist-section">
+    <div class="container">
+      <h2 class="section-title">Free Video Lessons</h2>
+      <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto 2rem;">Check out my teaching style with these free video tutorials. Subscribe to my YouTube channel for weekly lessons!</p>
       
       <div class="playlist-grid">
         <div class="playlist-card">
@@ -223,19 +503,7 @@
           <div class="playlist-info">
             <h4>Mathematics Fundamentals</h4>
             <p>Essential math concepts explained step-by-step, perfect for building a strong foundation in algebra and beyond.</p>
-            <a href="https://youtu.be/HBXGzOEC5to?si=JuJQnKPw9dRsvzxK" class="playlist-link" target="_blank">Watch Full Playlist</a>
-          </div>
-        </div>
-        
-        <!-- Coming Soon playlist cards -->
-        <div class="playlist-card coming-soon">
-          <div class="coming-soon-placeholder">
-            <div class="coming-soon-icon">🎥</div>
-            <div class="coming-soon-text">
-              <h4>Physics Concepts</h4>
-              <p>Complex physics topics broken down into digestible lessons with real-world applications and examples.</p>
-              <div class="coming-soon-badge">Coming Soon</div>
-            </div>
+            <a href="https://youtu.be/HBXGzOEC5to?si=JuJQnKPw9dRsvzxK" class="playlist-link" target="_blank">Watch Full Video</a>
           </div>
         </div>
         
@@ -252,8 +520,102 @@
             <a href="https://www.youtube.com/playlist?list=PLXiqi0yQMt-jyztS_Kfvyw8GZVALtgjts" class="playlist-link" target="_blank">Watch Full Playlist</a>
           </div>
         </div>
+
+        <div class="playlist-card">
+          <div class="coming-soon-placeholder">
+            <div class="coming-soon-icon">🎥</div>
+            <div class="coming-soon-badge">Coming Soon</div>
+          </div>
+          <div class="playlist-info">
+            <h4>Physics Concepts</h4>
+            <p>Complex physics topics broken down into digestible lessons with real-world applications and examples.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
+  <!-- FAQ Section -->
+  <div class="faq-section">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h4>How long are tutoring sessions?</h4>
+          <p>Standard sessions are 60 minutes, but I also offer 90-minute sessions for deeper dives into complex topics. We can customize session length based on your needs.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h4>Do you offer online tutoring?</h4>
+          <p>Yes! I offer both online (via Zoom) and in-person tutoring for students in the [Your Area] area. Online sessions work great and include screen sharing and digital whiteboards.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h4>What if I need to cancel or reschedule?</h4>
+          <p>I require 24 hours notice for cancellations or rescheduling. Sessions cancelled with less notice will be charged at the full rate.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h4>Can you help with homework and test prep?</h4>
+          <p>Absolutely! I help with homework, test preparation, exam review, and long-term skill building. We'll focus on whatever helps you succeed most.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h4>Do packages expire?</h4>
+          <p>5-session packages are valid for 3 months, and 10-session packages for 6 months. This gives you flexibility while encouraging consistent progress.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h4>What makes your tutoring effective?</h4>
+          <p>I focus on true understanding, not just memorization. We work through problems together, identify knowledge gaps, and build problem-solving skills that last beyond the exam.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Final CTA -->
+  <div class="final-cta-section">
+    <div class="container">
+      <h2>Ready to Get Started?</h2>
+      <p class="final-cta-text">Schedule your free consultation today. We'll discuss your goals, assess your needs, and create a personalized learning plan.</p>
+      <a href="schedule.html"><button class="cta-button primary large">Schedule Free Consultation</button></a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-main">
+          <h3>Blake the Tutor</h3>
+          <p>Expert math and science tutoring for students who want to excel.</p>
+        </div>
+        <div class="footer-contact">
+          <h4>Get in Touch</h4>
+          <p>📧 blake@blakethetutor.com</p>
+          <p>📱 (XXX) XXX-XXXX</p>
+          <p>📍 [Your City/Area] & Online</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="lessons.html">Subjects & Pricing</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+          </ul>
+        </div>
+        <div class="footer-hours">
+          <h4>Availability</h4>
+          <p>Mon-Fri: 3pm-9pm</p>
+          <p>Sat-Sun: 10am-6pm</p>
+          <p><em>Flexible scheduling available</em></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Blake the Tutor. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
