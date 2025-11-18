@@ -4,30 +4,163 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About - Blake the Tutor</title>
+  <meta name="description" content="Learn about Blake's background, teaching philosophy, and approach to tutoring.">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .page-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 2.5rem 0 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .page-header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+    
+    .page-header p {
+      font-size: 1.2rem;
+      opacity: 0.95;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .about-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 20px;
+    }
+
+    .about-intro {
+      background: white;
+      border-radius: 10px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .about-intro p {
+      color: #666;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-intro p:last-child {
+      margin-bottom: 0;
+    }
+
+    .philosophy-section {
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .philosophy-section h2 {
+      color: #2c3e50;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    .philosophy-section p {
+      color: #666;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 768px) {
+      .page-header h1 {
+        font-size: 2rem;
+      }
+      
+      .page-header p {
+        font-size: 1rem;
+      }
+      
+      .about-intro, .philosophy-section {
+        padding: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <!-- Navigation -->
   <nav class="navbar">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="lessons.html">Lessons</a></li>
-      <li><a href="schedule.html">Scheduling</a></li>
-    </ul>
+    <div class="nav-container">
+      <div class="logo">Blake the Tutor</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="lessons.html">Lessons</a></li>
+        <li><a href="schedule.html">Scheduling</a></li>
+        <li><a href="schedule.html" class="nav-cta">Book Now</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <div class="container">
-    <h1>About Me</h1>
-    <p>
-      Hi, I’m Blake — a dedicated tutor passionate about making complex topics clear and approachable. 
-      Over the years, I’ve worked with students from high school to university levels, helping them 
-      master tough material while building lasting confidence.
-    </p>
-    <p>
-      My teaching philosophy is simple: every student can succeed with the right guidance, patience, and 
-      problem-solving strategies. I strive to create a welcoming space where students feel comfortable 
-      asking questions and engaging deeply with their studies.
-    </p>
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <h1>About Me</h1>
+      <p>Get to know my background, teaching philosophy, and what makes my tutoring approach effective.</p>
+    </div>
   </div>
+
+  <!-- About Content -->
+  <div class="about-content">
+    <div class="about-intro">
+      <p>
+        Hi, I'm Blake — a dedicated tutor passionate about making complex topics clear and approachable. 
+        Over the years, I've worked with students from high school to university levels, helping them 
+        master tough material while building lasting confidence.
+      </p>
+      <p>
+        My teaching philosophy is simple: every student can succeed with the right guidance, patience, and 
+        problem-solving strategies. I strive to create a welcoming space where students feel comfortable 
+        asking questions and engaging deeply with their studies.
+      </p>
+    </div>
+
+    <div class="philosophy-section">
+      <h2>My Teaching Approach</h2>
+      <p>
+        I believe that true learning happens when students understand the "why" behind concepts, not just the "how." 
+        In our sessions, we'll work together to break down complex problems, identify patterns, and build 
+        problem-solving skills that extend far beyond any single exam or assignment.
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content" style="text-align: center;">
+        <div class="footer-main">
+          <h3>Blake the Tutor</h3>
+          <p>Expert math and science tutoring for students who want to excel.</p>
+        </div>
+        <div class="footer-contact">
+          <h4>Get in Touch</h4>
+          <p>📧 theblakeyerian@gmail.com</p>
+          <p>📱 (425) 892-4390</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="lessons.html">Subjects & Pricing</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Blake the Tutor. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
