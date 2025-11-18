@@ -1,470 +1,203 @@
-/* Reset and Base Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-color: #f8f9fa;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* Navigation */
-.navbar {
-  background-color: #2c3e50;
-  color: white;
-  padding: 1rem 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
-}
-
-.navbar ul {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
-  align-items: center;
-}
-
-.navbar a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.navbar a:hover {
-  color: #3498db;
-}
-
-.nav-cta {
-  background-color: #3498db;
-  padding: 0.5rem 1.5rem;
-  border-radius: 25px;
-  transition: background-color 0.3s;
-}
-
-.nav-cta:hover {
-  background-color: #2980b9;
-  color: white !important;
-}
-
-/* Hero Section */
-.hero-section {
-  text-align: center;
-  padding: 3rem 20px;
-  background: white;
-  border-radius: 10px;
-  margin-top: 2rem;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-.profile-image {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1.5rem;
-  border: 5px solid #3498db;
-  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
-}
-
-.credentials-badge {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
-  font-size: 0.95rem;
-  color: #555;
-}
-
-.credentials-badge span {
-  background-color: #e8f4f8;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-weight: 500;
-}
-
-.main-title {
-  font-size: 2.5rem;
-  color: #2c3e50;
-  margin-bottom: 1rem;
-  line-height: 1.2;
-}
-
-.subtitle {
-  font-size: 1.2rem;
-  color: #555;
-  margin-bottom: 1.5rem;
-  font-weight: 400;
-}
-
-.intro-text {
-  font-size: 1.1rem;
-  color: #666;
-  max-width: 800px;
-  margin: 0 auto 2rem;
-  line-height: 1.8;
-}
-
-/* CTA Section */
-.cta-section {
-  margin: 2rem 0;
-}
-
-.cta-button {
-  background-color: #3498db;
-  color: white;
-  border: none;
-  padding: 1rem 2.5rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: all 0.3s;
-  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
-}
-
-.cta-button:hover {
-  background-color: #2980b9;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
-}
-
-.cta-button.large {
-  padding: 1.2rem 3rem;
-  font-size: 1.2rem;
-}
-
-.cta-button.secondary {
-  background-color: #27ae60;
-  margin-top: 1rem;
-}
-
-.cta-button.secondary:hover {
-  background-color: #229954;
-}
-
-.cta-subtext {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  color: #777;
-}
-
-/* Stats Section */
-.stats-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 3rem 0;
-  margin-top: 3rem;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  text-align: center;
-}
-
-.stat-card {
-  padding: 1.5rem;
-}
-
-.stat-number {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.stat-label {
-  font-size: 1.1rem;
-  opacity: 0.9;
-}
-
-/* Testimonials Section */
-.testimonials-section {
-  padding: 4rem 0;
-  background-color: #f8f9fa;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 2.2rem;
-  color: #2c3e50;
-  margin-bottom: 3rem;
-}
-
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-.testimonial-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  transition: transform 0.3s;
-}
-
-.testimonial-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-}
-
-.stars {
-  color: #f39c12;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-.testimonial-text {
-  font-size: 1rem;
-  color: #555;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-  font-style: italic;
-}
-
-.testimonial-author {
-  font-weight: 600;
-  color: #2c3e50;
-  font-size: 0.95rem;
-}
-
-/* Highlights Section */
-.highlights-section {
-  padding: 4rem 0;
-  background: white;
-}
-
-.highlights {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.highlight-card {
-  background: #f8f9fa;
-  padding: 2rem;
-  border-radius: 10px;
-  text-align: center;
-  transition: all 0.3s;
-  border: 2px solid transparent;
-}
-
-.highlight-card:hover {
-  border-color: #3498db;
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.15);
-}
-
-.card-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.highlight-card h3 {
-  color: #2c3e50;
-  margin-bottom: 1rem;
-  font-size: 1.4rem;
-}
-
-.highlight-card p {
-  color: #666;
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-}
-
-.card-link {
-  color: #3498db;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s;
-}
-
-.card-link:hover {
-  color: #2980b9;
-}
-
-/* Why Section */
-.why-section {
-  padding: 4rem 0;
-  background-color: #f8f9fa;
-}
-
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.why-item {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 8px;
-  border-left: 4px solid #3498db;
-}
-
-.why-item h4 {
-  color: #2c3e50;
-  margin-bottom: 0.5rem;
-  font-size: 1.1rem;
-}
-
-.why-item p {
-  color: #666;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-/* Final CTA Section */
-.final-cta-section {
-  background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
-  color: white;
-  padding: 4rem 0;
-  text-align: center;
-}
-
-.final-cta-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.final-cta-text {
-  font-size: 1.2rem;
-  max-width: 700px;
-  margin: 0 auto 2rem;
-  opacity: 0.95;
-}
-
-.final-cta-section .cta-button {
-  background-color: #27ae60;
-  margin-bottom: 1rem;
-}
-
-.final-cta-section .cta-button:hover {
-  background-color: #229954;
-}
-
-.final-cta-section .cta-subtext {
-  color: rgba(255,255,255,0.9);
-}
-
-/* Footer */
-.footer {
-  background-color: #2c3e50;
-  color: white;
-  padding: 3rem 0 1rem;
-}
-
-.footer-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-
-.footer h3, .footer h4 {
-  margin-bottom: 1rem;
-  color: #3498db;
-}
-
-.footer p {
-  margin-bottom: 0.5rem;
-  opacity: 0.9;
-}
-
-.footer ul {
-  list-style: none;
-}
-
-.footer ul li {
-  margin-bottom: 0.5rem;
-}
-
-.footer a {
-  color: white;
-  text-decoration: none;
-  opacity: 0.9;
-  transition: opacity 0.3s;
-}
-
-.footer a:hover {
-  opacity: 1;
-  color: #3498db;
-}
-
-.footer-bottom {
-  text-align: center;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  opacity: 0.7;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .navbar ul {
-    gap: 1rem;
-    font-size: 0.9rem;
-  }
-  
-  .main-title {
-    font-size: 1.8rem;
-  }
-  
-  .subtitle {
-    font-size: 1rem;
-  }
-  
-  .credentials-badge {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .section-title {
-    font-size: 1.8rem;
-  }
-  
-  .highlights, .testimonials-grid, .why-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .footer-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blake the Tutor - Expert Math & Science Tutoring | [Your City]</title>
+  <meta name="description" content="Expert math and science tutoring with personalized 1-on-1 lessons. SAT/ACT prep, AP courses, calculus, chemistry & more. Proven results for high school and college students.">
+  <meta name="keywords" content="math tutor, science tutor, calculus tutor, chemistry tutor, SAT prep, ACT prep, AP tutoring, private tutor">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">Blake the Tutor</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="lessons.html">Lessons</a></li>
+        <li><a href="schedule.html">Scheduling</a></li>
+        <li><a href="schedule.html" class="nav-cta">Book Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="container hero-section">
+    <img src="assets/img/mainprofile.png" alt="Blake the Tutor - Professional Math and Science Tutor" class="profile-image">
+    
+    <div class="credentials-badge">
+      <span>🎓 [Degree] from [University]</span>
+      <span>⭐ 5+ Years Experience</span>
+      <span>📈 100+ Students Helped</span>
+    </div>
+
+    <h1 class="main-title">Master Math & Science with Personalized 1-on-1 Tutoring</h1>
+    <p class="subtitle">Experienced tutor helping students achieve A's and ace their exams | Online & In-Person in [Your Location]</p>
+    
+    <p class="intro-text">
+      Struggling with calculus? Need to ace your chemistry exam? I specialize in breaking down complex concepts into clear, digestible lessons that actually stick. Whether you're preparing for the SAT, tackling AP courses, or need help with college-level STEM classes, I'll create a personalized learning plan just for you.
+    </p>
+
+    <div class="cta-section">
+      <a href="schedule.html"><button class="cta-button primary">Schedule Your Free Consultation</button></a>
+      <p class="cta-subtext">✓ Limited spots available &nbsp;•&nbsp; ✓ Response within 24 hours &nbsp;•&nbsp; ✓ No obligation</p>
+    </div>
+  </div>
+
+  <!-- Social Proof Section -->
+  <div class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">100+</div>
+          <div class="stat-label">Students Tutored</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">95%</div>
+          <div class="stat-label">Grade Improvement</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">4.9/5</div>
+          <div class="stat-label">Average Rating</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">5+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonials Section -->
+  <div class="testimonials-section">
+    <div class="container">
+      <h2 class="section-title">What Students & Parents Say</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"Blake helped me go from a C to an A in AP Calculus! His explanations are so clear and he's incredibly patient. I actually understand math now instead of just memorizing formulas."</p>
+          <p class="testimonial-author">— Sarah M., High School Junior</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"As a parent, I couldn't be happier. Blake is professional, punctual, and has made a huge difference in my son's confidence. His SAT math score went up 150 points!"</p>
+          <p class="testimonial-author">— Jennifer L., Parent</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"Best tutor I've ever had. Blake doesn't just teach you how to solve problems—he teaches you how to think. Totally worth it for my organic chemistry class."</p>
+          <p class="testimonial-author">— Michael T., College Sophomore</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services Highlights -->
+  <div class="highlights-section">
+    <div class="container">
+      <h2 class="section-title">How I Can Help You Succeed</h2>
+      <div class="highlights">
+        <div class="highlight-card">
+          <div class="card-icon">📚</div>
+          <h3>My Expertise</h3>
+          <p>Calculus, Algebra, Physics, Chemistry, Biology, SAT/ACT Math, AP courses, and more. I specialize in high school and college-level STEM subjects.</p>
+          <a href="lessons.html" class="card-link">See all subjects →</a>
+        </div>
+        <div class="highlight-card">
+          <div class="card-icon">💰</div>
+          <h3>Flexible Pricing</h3>
+          <p>Competitive hourly rates starting at $60/hour with package discounts available. First consultation is always free to ensure we're a good fit.</p>
+          <a href="lessons.html#pricing" class="card-link">View pricing →</a>
+        </div>
+        <div class="highlight-card">
+          <div class="card-icon">📅</div>
+          <h3>Easy Scheduling</h3>
+          <p>Book sessions that fit your busy schedule. Available for online sessions via Zoom or in-person tutoring in the [Your Area] area.</p>
+          <a href="schedule.html" class="card-link">Schedule now →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Why Choose Me Section -->
+  <div class="why-section">
+    <div class="container">
+      <h2 class="section-title">Why Students Choose Me</h2>
+      <div class="why-grid">
+        <div class="why-item">
+          <h4>✓ Personalized Learning Plans</h4>
+          <p>Every student learns differently. I adapt my teaching style to match your needs.</p>
+        </div>
+        <div class="why-item">
+          <h4>✓ Proven Track Record</h4>
+          <p>95% of my students see grade improvements within the first month.</p>
+        </div>
+        <div class="why-item">
+          <h4>✓ Test Prep Specialist</h4>
+          <p>Expert in SAT, ACT, and AP exam preparation with consistently high scores.</p>
+        </div>
+        <div class="why-item">
+          <h4>✓ Flexible & Convenient</h4>
+          <p>Online and in-person options with evening and weekend availability.</p>
+        </div>
+        <div class="why-item">
+          <h4>✓ Patient & Encouraging</h4>
+          <p>I create a supportive environment where it's okay to make mistakes and ask questions.</p>
+        </div>
+        <div class="why-item">
+          <h4>✓ Clear Communication</h4>
+          <p>Regular progress updates and feedback for students and parents.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Final CTA Section -->
+  <div class="final-cta-section">
+    <div class="container">
+      <h2>Ready to Transform Your Grades?</h2>
+      <p class="final-cta-text">Let's work together to build your confidence and master challenging subjects. Book your free consultation today—no pressure, just a friendly chat about your goals.</p>
+      <a href="schedule.html"><button class="cta-button primary large">Schedule Free Consultation</button></a>
+      <p class="cta-subtext">🎯 Personalized approach &nbsp;•&nbsp; 💯 Proven results &nbsp;•&nbsp; 🚀 Start seeing improvement fast</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-main">
+          <h3>Blake the Tutor</h3>
+          <p>Expert math and science tutoring for students who want to excel.</p>
+        </div>
+        <div class="footer-contact">
+          <h4>Get in Touch</h4>
+          <p>📧 blake@blakethetutor.com</p>
+          <p>📱 (XXX) XXX-XXXX</p>
+          <p>📍 [Your City/Area] & Online</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="lessons.html">Subjects & Pricing</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+          </ul>
+        </div>
+        <div class="footer-hours">
+          <h4>Availability</h4>
+          <p>Mon-Fri: 3pm-9pm</p>
+          <p>Sat-Sun: 10am-6pm</p>
+          <p><em>Flexible scheduling available</em></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Blake the Tutor. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
