@@ -4,33 +4,347 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Schedule - Blake the Tutor</title>
+  <meta name="description" content="Schedule your tutoring session with Blake. Easy online booking or call directly.">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .page-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 2.5rem 0 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .page-header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+    
+    .page-header p {
+      font-size: 1.2rem;
+      opacity: 0.95;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .schedule-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 20px;
+    }
+
+    .contact-options {
+      background: white;
+      border-radius: 10px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .contact-options h2 {
+      color: #2c3e50;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    .contact-options p {
+      color: #666;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-methods {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .contact-card {
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 1.5rem;
+      flex: 1;
+      min-width: 250px;
+      max-width: 350px;
+      transition: all 0.3s;
+      border: 2px solid transparent;
+    }
+
+    .contact-card:hover {
+      border-color: #3498db;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(52, 152, 219, 0.15);
+    }
+
+    .contact-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-card h3 {
+      color: #2c3e50;
+      margin-bottom: 0.75rem;
+      font-size: 1.3rem;
+    }
+
+    .contact-card p {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-button {
+      display: inline-block;
+      background-color: #3498db;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .contact-button:hover {
+      background-color: #2980b9;
+      transform: translateY(-2px);
+    }
+
+    .contact-button.secondary {
+      background-color: #27ae60;
+    }
+
+    .contact-button.secondary:hover {
+      background-color: #229954;
+    }
+
+    .calendly-section {
+      background: white;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      margin-bottom: 2rem;
+    }
+
+    .calendly-section h2 {
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    .calendly-section p {
+      color: #666;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .calendly-inline-widget {
+      min-width: 320px;
+      height: 700px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .info-boxes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .info-box {
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 1.5rem;
+      border-left: 4px solid #3498db;
+    }
+
+    .info-box h3 {
+      color: #2c3e50;
+      margin-bottom: 0.75rem;
+      font-size: 1.2rem;
+    }
+
+    .info-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .info-box li {
+      color: #666;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    .info-box li:last-child {
+      border-bottom: none;
+    }
+
+    .info-box li:before {
+      content: "✓ ";
+      color: #27ae60;
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .page-header h1 {
+        font-size: 2rem;
+      }
+
+      .contact-methods {
+        flex-direction: column;
+      }
+
+      .contact-card {
+        max-width: 100%;
+      }
+
+      .calendly-inline-widget {
+        height: 600px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <!-- Navigation -->
   <nav class="navbar">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="lessons.html">Lessons</a></li>
-      <li><a href="schedule.html">Scheduling</a></li>
-    </ul>
+    <div class="nav-container">
+      <div class="logo">Blake the Tutor</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="lessons.html">Lessons</a></li>
+        <li><a href="schedule.html">Scheduling</a></li>
+        <li><a href="schedule.html" class="nav-cta">Book Now</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <div class="container">
-    <h1>Scheduling</h1>
-    <p>Ready to book a lesson? You can reach me directly at:</p>
-    <p>
-      <a href="tel:+14258924390" class="cta-button">Call (425) 892-4390</a>
-    </p>
-    <p>Or use my online scheduling tool below:</p>
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <h1>Schedule Your Session</h1>
+      <p>Book your free consultation or first tutoring session. Choose the method that works best for you.</p>
+    </div>
+  </div>
 
-    <!-- Example embed: replace with your Calendly link or booking system -->
-    <div style="margin-top:20px;">
-            <!-- Calendly inline widget begin -->
-      <div class="calendly-inline-widget" data-url="https://calendly.com/theblakeyerian/30min" style="min-width:320px;height:700px;"></div>
+  <!-- Contact Options -->
+  <div class="schedule-content">
+    <div class="contact-options">
+      <h2>Get Started Today</h2>
+      <p>Ready to improve your grades? Choose how you'd like to connect:</p>
+      
+      <div class="contact-methods">
+        <div class="contact-card">
+          <div class="contact-icon">📞</div>
+          <h3>Call or Text</h3>
+          <p>Prefer to talk directly? Give me a call or send a text message.</p>
+          <a href="tel:+14258924390" class="contact-button">(425) 892-4390</a>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon">📧</div>
+          <h3>Email Me</h3>
+          <p>Send me an email with your questions or scheduling needs.</p>
+          <a href="mailto:blake@blakethetutor.com" class="contact-button secondary">Send Email</a>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon">📅</div>
+          <h3>Book Online</h3>
+          <p>Use the calendar below to instantly schedule your session.</p>
+          <a href="#calendly" class="contact-button">View Calendar</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Calendly Section -->
+    <div class="calendly-section" id="calendly">
+      <h2>Book Your Session</h2>
+      <p>Select a time that works for you. I'll send a confirmation email with all the details.</p>
+      
+      <!-- Calendly inline widget begin -->
+      <div class="calendly-inline-widget" data-url="https://calendly.com/theblakeyerian/30min"></div>
       <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
       <!-- Calendly inline widget end -->
     </div>
+
+    <!-- Info Boxes -->
+    <div class="info-boxes">
+      <div class="info-box">
+        <h3>What to Expect</h3>
+        <ul>
+          <li>Free 15-minute consultation call</li>
+          <li>Discuss your goals and challenges</li>
+          <li>Create a personalized learning plan</li>
+          <li>No obligation or pressure</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>Session Details</h3>
+        <ul>
+          <li>60-minute standard sessions</li>
+          <li>Online via Zoom or in-person</li>
+          <li>Flexible rescheduling policy</li>
+          <li>All materials provided</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>Availability</h3>
+        <ul>
+          <li>Monday-Friday: 3pm-9pm</li>
+          <li>Saturday-Sunday: 10am-6pm</li>
+          <li>Some morning slots available</li>
+          <li>24-hour cancellation notice</li>
+        </ul>
+      </div>
+    </div>
   </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-main">
+          <h3>Blake the Tutor</h3>
+          <p>Expert math and science tutoring for students who want to excel.</p>
+        </div>
+        <div class="footer-contact">
+          <h4>Get in Touch</h4>
+          <p>📧 blake@blakethetutor.com</p>
+          <p>📱 (425) 892-4390</p>
+          <p>📍 [Your City/Area] & Online</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="lessons.html">Subjects & Pricing</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+          </ul>
+        </div>
+        <div class="footer-hours">
+          <h4>Availability</h4>
+          <p>Mon-Fri: 3pm-9pm</p>
+          <p>Sat-Sun: 10am-6pm</p>
+          <p><em>Flexible scheduling available</em></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Blake the Tutor. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
