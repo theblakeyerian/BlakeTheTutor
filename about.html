@@ -28,47 +28,184 @@
     }
 
     .about-content {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
       padding: 2rem 20px;
     }
 
-    .about-intro {
+    /* Hero Section with Image */
+    .about-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
       background: white;
       border-radius: 10px;
-      padding: 2rem;
+      padding: 2.5rem;
       margin-bottom: 2rem;
       box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      align-items: center;
     }
 
-    .about-intro p {
+    .hero-image {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .hero-text h2 {
+      color: #2c3e50;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-text p {
+      color: #666;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    /* Story Section */
+    .story-section {
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .story-section h2 {
+      color: #2c3e50;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      text-align: center;
+    }
+
+    .story-section p {
       color: #666;
       font-size: 1.1rem;
       line-height: 1.8;
       margin-bottom: 1.5rem;
     }
 
-    .about-intro p:last-child {
+    .story-section p:last-child {
       margin-bottom: 0;
     }
 
-    .philosophy-section {
-      background: #f8f9fa;
+    .highlight-quote {
+      background: white;
+      border-left: 4px solid #3498db;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 5px;
+      font-style: italic;
+      color: #555;
+      font-size: 1.15rem;
+    }
+
+    /* Credentials Section */
+    .credentials-section {
+      background: white;
       border-radius: 10px;
-      padding: 2rem;
+      padding: 2.5rem;
       margin-bottom: 2rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .credentials-section h2 {
+      color: #2c3e50;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      text-align: center;
+    }
+
+    .credentials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .credential-card {
+      background: #f8f9fa;
+      padding: 1.5rem;
+      border-radius: 8px;
+      border-left: 4px solid #3498db;
+    }
+
+    .credential-icon {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .credential-card h3 {
+      color: #2c3e50;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .credential-card p {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Philosophy Section */
+    .philosophy-section {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border-radius: 10px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
     }
 
     .philosophy-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .philosophy-item {
+      text-align: center;
+    }
+
+    .philosophy-item h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .philosophy-item p {
+      font-size: 0.95rem;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+
+    /* CTA Section */
+    .about-cta {
+      background: white;
+      border-radius: 10px;
+      padding: 2.5rem;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .about-cta h2 {
       color: #2c3e50;
       margin-bottom: 1rem;
       font-size: 1.8rem;
     }
 
-    .philosophy-section p {
+    .about-cta p {
       color: #666;
       font-size: 1.1rem;
-      line-height: 1.8;
+      margin-bottom: 1.5rem;
     }
 
     @media (max-width: 768px) {
@@ -80,8 +217,26 @@
         font-size: 1rem;
       }
       
-      .about-intro, .philosophy-section {
+      .about-hero {
+        grid-template-columns: 1fr;
+        gap: 2rem;
         padding: 1.5rem;
+      }
+      
+      .hero-text h2 {
+        font-size: 1.6rem;
+      }
+      
+      .story-section,
+      .credentials-section,
+      .philosophy-section,
+      .about-cta {
+        padding: 1.5rem;
+      }
+      
+      .credentials-grid,
+      .philosophy-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -105,32 +260,125 @@
   <div class="page-header">
     <div class="container">
       <h1>About Me</h1>
-      <p>Get to know my background, teaching philosophy, and what makes my tutoring approach effective.</p>
+      <p>From struggling student to passionate educator — discover my journey and teaching philosophy.</p>
     </div>
   </div>
 
   <!-- About Content -->
   <div class="about-content">
-    <div class="about-intro">
+    <!-- Hero Section with Image -->
+    <div class="about-hero">
+      <div class="hero-image-container">
+        <img src="assets/img/family-photo.jpg" alt="Blake with family" class="hero-image">
+        <p style="text-align: center; margin-top: 1rem; color: #888; font-size: 0.9rem;">Me with my family</p>
+      </div>
+      <div class="hero-text">
+        <h2>Hi, I'm Blake</h2>
+        <p>
+          I'm a dedicated tutor who's passionate about helping students overcome the challenges I once faced myself. 
+          My journey as an educator started from a place of struggle — and that's exactly what makes me effective at what I do.
+        </p>
+        <p>
+          Over the years, I've helped hundreds of students from high school to university levels master subjects 
+          they once thought were impossible. Because I've been in their shoes, I know exactly what it takes to turn 
+          confusion into confidence.
+        </p>
+      </div>
+    </div>
+
+    <!-- Story Section -->
+    <div class="story-section">
+      <h2>My Story: Why I Became a Tutor</h2>
       <p>
-        Hi, I'm Blake — a dedicated tutor passionate about making complex topics clear and approachable. 
-        Over the years, I've worked with students from high school to university levels, helping them 
-        master tough material while building lasting confidence.
+        Growing up, school didn't come easily to me. I spent years struggling in public school classrooms, 
+        falling behind in math and science while watching my classmates seem to "get it" effortlessly. 
+        I felt frustrated, lost, and convinced I just wasn't smart enough.
       </p>
       <p>
-        My teaching philosophy is simple: every student can succeed with the right guidance, patience, and 
-        problem-solving strategies. I strive to create a welcoming space where students feel comfortable 
-        asking questions and engaging deeply with their studies.
+        Everything changed when my parents found me a tutor. For the first time, someone took the time to 
+        explain concepts in a way that made sense to <em>me</em>. My tutor didn't just show me how to solve 
+        problems — they showed me how to <em>think</em> about problems. They were patient, encouraging, and 
+        believed in me even when I didn't believe in myself.
+      </p>
+      
+      <div class="highlight-quote">
+        "That experience transformed not just my grades, but my entire relationship with learning. 
+        I discovered that I wasn't bad at math or science — I just needed someone to teach me differently."
+      </div>
+      
+      <p>
+        That's why I became a tutor. I know what it's like to feel stuck, to stare at a problem and have 
+        no idea where to start. I understand the anxiety before an exam and the relief when concepts finally 
+        click into place. Because I've been there, I can connect with my students on a deeper level and create 
+        the same supportive environment that once changed my life.
       </p>
     </div>
 
+    <!-- Credentials Section -->
+    <div class="credentials-section">
+      <h2>Background & Experience</h2>
+      <div class="credentials-grid">
+        <div class="credential-card">
+          <div class="credential-icon">🎓</div>
+          <h3>Education</h3>
+          <p>[Your Degree] from [Your University]. Specialized in [Your Major/Focus Area].</p>
+        </div>
+        
+        <div class="credential-card">
+          <div class="credential-icon">⭐</div>
+          <h3>Experience</h3>
+          <p>5+ years of tutoring students from high school through college level in STEM subjects.</p>
+        </div>
+        
+        <div class="credential-card">
+          <div class="credential-icon">📈</div>
+          <h3>Track Record</h3>
+          <p>100+ students tutored with 95% showing grade improvement within the first month.</p>
+        </div>
+        
+        <div class="credential-card">
+          <div class="credential-icon">🏆</div>
+          <h3>Specializations</h3>
+          <p>Expert in calculus, chemistry, physics, and standardized test preparation (SAT/ACT).</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Philosophy Section -->
     <div class="philosophy-section">
-      <h2>My Teaching Approach</h2>
+      <h2>My Teaching Philosophy</h2>
+      <div class="philosophy-grid">
+        <div class="philosophy-item">
+          <h3>📚 Understanding Over Memorization</h3>
+          <p>I teach the "why" behind concepts so you truly understand, not just memorize formulas.</p>
+        </div>
+        
+        <div class="philosophy-item">
+          <h3>🤝 Patient & Supportive</h3>
+          <p>I create a judgment-free space where it's safe to ask questions and make mistakes.</p>
+        </div>
+        
+        <div class="philosophy-item">
+          <h3>🎯 Personalized Approach</h3>
+          <p>Every student learns differently. I adapt my teaching style to match your unique needs.</p>
+        </div>
+        
+        <div class="philosophy-item">
+          <h3>💪 Building Confidence</h3>
+          <p>My goal isn't just better grades — it's helping you believe in your own abilities.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="about-cta">
+      <h2>Let's Work Together</h2>
       <p>
-        I believe that true learning happens when students understand the "why" behind concepts, not just the "how." 
-        In our sessions, we'll work together to break down complex problems, identify patterns, and build 
-        problem-solving skills that extend far beyond any single exam or assignment.
+        If you're struggling with a subject, feeling overwhelmed, or just want to take your understanding 
+        to the next level — I'm here to help. Let's schedule a free consultation and create a plan 
+        that works for you.
       </p>
+      <a href="schedule.html"><button class="cta-button primary large">Schedule Free Consultation</button></a>
     </div>
   </div>
 
