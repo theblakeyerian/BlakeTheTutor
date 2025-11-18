@@ -11,9 +11,9 @@
     .page-header {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
-      padding: 4rem 0 3rem;
+      padding: 2.5rem 0 2rem;
       text-align: center;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
     }
     
     .page-header h1 {
@@ -30,7 +30,7 @@
     
     /* Video Lessons Section - AT THE TOP */
     .playlist-section {
-      padding: 3rem 0 4rem;
+      padding: 2rem 0 2.5rem;
       background: white;
     }
     
@@ -120,22 +120,22 @@
     }
     
     .subjects-section {
-      margin-bottom: 4rem;
+      margin-bottom: 2rem;
       background: #f8f9fa;
-      padding: 4rem 0;
+      padding: 2.5rem 0;
     }
     
     .subjects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 1.5rem;
     }
     
     .subject-card {
       background: white;
-      border-radius: 12px;
-      padding: 2rem;
+      border-radius: 10px;
+      padding: 1.5rem;
       box-shadow: 0 4px 15px rgba(0,0,0,0.08);
       transition: all 0.3s;
       border-left: 4px solid #3498db;
@@ -183,20 +183,20 @@
     /* Pricing Section */
     .pricing-section {
       background: white;
-      padding: 4rem 0;
+      padding: 2.5rem 0;
     }
     
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
     }
     
     .pricing-card {
       background: #f8f9fa;
-      border-radius: 12px;
-      padding: 2.5rem;
+      border-radius: 10px;
+      padding: 2rem;
       box-shadow: 0 4px 15px rgba(0,0,0,0.08);
       text-align: center;
       transition: all 0.3s;
@@ -289,13 +289,13 @@
     /* FAQ Section */
     .faq-section {
       background: #f8f9fa;
-      padding: 4rem 0;
+      padding: 2.5rem 0;
     }
     
     .faq-grid {
       display: grid;
-      gap: 1.5rem;
-      margin-top: 2rem;
+      gap: 1rem;
+      margin-top: 1.5rem;
       max-width: 900px;
       margin-left: auto;
       margin-right: auto;
@@ -303,7 +303,7 @@
     
     .faq-item {
       background: white;
-      padding: 1.5rem;
+      padding: 1.25rem;
       border-radius: 8px;
       border-left: 4px solid #3498db;
     }
@@ -333,6 +333,10 @@
       .pricing-grid,
       .playlist-grid {
         grid-template-columns: 1fr;
+      }
+      
+      .subjects-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
       
       .pricing-card.popular {
