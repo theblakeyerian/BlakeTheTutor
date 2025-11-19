@@ -1,135 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About - Blake the Tutor</title>
-  <meta name="description" content="Learn about Blake's background, teaching philosophy, and approach to tutoring.">
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    .page-header {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 2.5rem 0 2rem;
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    
-    .page-header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-    }
-    
-    .page-header p {
-      font-size: 1.2rem;
-      opacity: 0.95;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .about-content {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 2rem 20px;
-    }
-
-    /* Hero Section with Image */
-    .about-hero {
+.credentials-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      background: white;
-      border-radius: 10px;
-      padding: 2.5rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      align-items: center;
-    }
-
-    .hero-image {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-
-    .hero-text h2 {
-      color: #2c3e50;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero-text p {
-      color: #666;
-      font-size: 1.1rem;
-      line-height: 1.8;
-      margin-bottom: 1rem;
-    }
-
-    /* Story Section */
-    .story-section {
-      background: #f8f9fa;
-      border-radius: 10px;
-      padding: 2.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .story-section h2 {
-      color: #2c3e50;
-      margin-bottom: 1.5rem;
-      font-size: 1.8rem;
-      text-align: center;
-    }
-
-    .story-section p {
-      color: #666;
-      font-size: 1.1rem;
-      line-height: 1.8;
-      margin-bottom: 1.5rem;
-    }
-
-    .story-section p:last-child {
-      margin-bottom: 0;
-    }
-
-    .highlight-quote {
-      background: white;
-      border-left: 4px solid #3498db;
-      padding: 1.5rem;
-      margin: 2rem 0;
-      border-radius: 5px;
-      font-style: italic;
-      color: #555;
-      font-size: 1.15rem;
-    }
-
-    /* Credentials Section */
-    .credentials-section {
-      background: white;
-      border-radius: 10px;
-      padding: 2.5rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    }
-
-    .credentials-section h2 {
-      color: #2c3e50;
-      margin-bottom: 1.5rem;
-      font-size: 1.8rem;
-      text-align: center;
-    }
-
-    .credentials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
       margin-top: 2rem;
     }
 
     .credential-card {
-      background: #f8f9fa;
+      background: #faf8f5;
       padding: 1.5rem;
       border-radius: 8px;
-      border-left: 4px solid #3498db;
+      border-left: 4px solid #4299e1;
     }
 
     .credential-icon {
@@ -138,76 +18,19 @@
     }
 
     .credential-card h3 {
-      color: #2c3e50;
+      color: #1a202c;
       margin-bottom: 0.5rem;
       font-size: 1.2rem;
     }
 
     .credential-card p {
-      color: #666;
+      color: #718096;
       font-size: 0.95rem;
       line-height: 1.6;
       margin: 0;
     }
 
-    /* Philosophy Section */
-    .philosophy-section {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      border-radius: 10px;
-      padding: 2.5rem;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-
-    .philosophy-section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .philosophy-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .philosophy-item {
-      text-align: center;
-    }
-
-    .philosophy-item h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .philosophy-item p {
-      font-size: 0.95rem;
-      opacity: 0.9;
-      line-height: 1.6;
-    }
-
-    /* CTA Section */
-    .about-cta {
-      background: white;
-      border-radius: 10px;
-      padding: 2.5rem;
-      text-align: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    }
-
-    .about-cta h2 {
-      color: #2c3e50;
-      margin-bottom: 1rem;
-      font-size: 1.8rem;
-    }
-
-    .about-cta p {
-      color: #666;
-      font-size: 1.1rem;
-      margin-bottom: 1.5rem;
-    }
-
+    /* Mobile adjustments */
     @media (max-width: 768px) {
       .page-header h1 {
         font-size: 2rem;
@@ -234,178 +57,12 @@
         padding: 1.5rem;
       }
       
-      .credentials-grid,
+      .credentials-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      
       .philosophy-grid {
         grid-template-columns: 1fr;
       }
     }
-  </style>
-</head>
-<body>
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="logo">Blake the Tutor</div>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="subjects.html">Subjects</a></li>
-        <li><a href="pricing.html">Pricing</a></li>
-        <li><a href="schedule.html">Schedule</a></li>
-        <li><a href="schedule.html" class="nav-cta">Book Now</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Page Header -->
-  <div class="page-header">
-    <div class="container">
-      <h1>About Me</h1>
-      <p>From struggling student to passionate educator — discover my journey and teaching philosophy.</p>
-    </div>
-  </div>
-
-  <!-- About Content -->
-  <div class="about-content">
-    <!-- Hero Section with Image -->
-    <div class="about-hero">
-      <div class="hero-image-container">
-        <img src="assets/img/babypic.jpg" alt="Blake with family" class="hero-image">
-        <p style="text-align: center; margin-top: 1rem; color: #888; font-size: 0.9rem;">Me with my daughter</p>
-      </div>
-      <div class="hero-text">
-        <h2>Hi, I'm Blake</h2>
-        <p>
-          I'm a dedicated tutor who's passionate about helping students overcome the challenges I once faced myself. 
-          My journey as an educator started from a place of struggle — and that's exactly what makes me effective at what I do.
-        </p>
-        <p>
-          Over the years, I've helped hundreds of students from high school to university levels master subjects 
-          they once thought were impossible. Because I've been in their shoes, I know exactly what it takes to turn 
-          confusion into confidence.
-        </p>
-      </div>
-    </div>
-
-    <!-- Credentials Section -->
-    <div class="credentials-section">
-      <h2>My Experience & Qualifications</h2>
-      <div class="credentials-grid">
-        <div class="credential-card">
-          <div class="credential-icon">📚</div>
-          <h3>15+ Years Teaching</h3>
-          <p>Over 15 years helping students from middle school through university level master challenging STEM subjects.</p>
-        </div>
-        
-        <div class="credential-card">
-          <div class="credential-icon">🎓</div>
-          <h3>100+ Students Tutored</h3>
-          <p>Worked with hundreds of students in calculus, chemistry, physics, test prep, and more with consistently strong results.</p>
-        </div>
-        
-        <div class="credential-card">
-          <div class="credential-icon">📈</div>
-          <h3>Proven Track Record</h3>
-          <p>95% of students see grade improvements within their first month. Average SAT math score increase of 150+ points.</p>
-        </div>
-        
-        <div class="credential-card">
-          <div class="credential-icon">🎯</div>
-          <h3>Subject Matter Expertise</h3>
-          <p>Deep expertise in advanced mathematics (through calculus), organic chemistry, physics, and standardized test preparation.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Story Section -->
-    <div class="story-section">
-      <h2>My Story: Why I Became a Tutor</h2>
-      <p>
-        Growing up, school didn't come easily to me. I spent years struggling in public school classrooms, 
-        falling behind and "checking out" to avoid the frustration. I felt lost, and defeated.
-      </p>
-      <p>
-        Everything changed when I found someone who could communicate with me and <em>wanted</em> to talk about the subject matter. 
-        For the first time, someone took the time to explain concepts in a way that made sense to <em>me</em>. They didn't just show me how to solve 
-        problems — they showed me how to <em>think</em> about problems. They were patient, encouraging, and 
-        believed in me even when I didn't believe in myself.
-      </p>
-      
-      <div class="highlight-quote">
-        "That experience transformed not just my grades, but my entire relationship with learning. 
-        I discovered that I wasn't bad at math or science — I just needed someone to teach me differently."
-      </div>
-      
-      <p>
-        That's why I became a tutor. I know what it's like to feel stuck, to stare at a problem and have 
-        no idea where to start. I understand the anxiety before an exam and the relief when concepts finally 
-        click into place. Because I've been there, I can connect with my students on a deeper level and create 
-        the same supportive environment that once changed my life.
-      </p>
-    </div>
-
-    <!-- Philosophy Section -->
-    <div class="philosophy-section">
-      <h2>My Teaching Philosophy</h2>
-      <div class="philosophy-grid">
-        <div class="philosophy-item">
-          <h3>📚 Understanding Over Memorization</h3>
-          <p>I teach the "why" behind concepts so you truly understand, not just memorize formulas.</p>
-        </div>
-        
-        <div class="philosophy-item">
-          <h3>🤝 Patient & Supportive</h3>
-          <p>I create a judgment-free space where it's safe to ask questions and make mistakes.
-          Every student learns differently. I adapt my teaching style to match your unique needs.</p>
-        </div>
-        
-        <div class="philosophy-item">
-          <h3>💪 Building Confidence</h3>
-          <p>My goal isn't just better grades — it's helping you believe in your own abilities.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- CTA Section -->
-    <div class="about-cta">
-      <h2>Let's Work Together</h2>
-      <p>
-        If you're struggling with a subject, feeling overwhelmed, or just want to take your understanding 
-        to the next level — I'm here to help. Let's schedule a free consultation and create a plan 
-        that works for you.
-      </p>
-      <a href="schedule.html"><button class="cta-button primary large">Schedule Free Consultation</button></a>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content" style="text-align: center;">
-        <div class="footer-main">
-          <h3>Blake the Tutor</h3>
-          <p>Expert math and science tutoring for students who want to excel.</p>
-        </div>
-        <div class="footer-contact">
-          <h4>Get in Touch</h4>
-          <p>📧 theblakeyerian@gmail.com</p>
-          <p>📱 (425) 892-4390</p>
-        </div>
-        <div class="footer-links">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="subjects.html">Subjects</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="schedule.html">Schedule</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2024 Blake the Tutor. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-</body>
-</html>
