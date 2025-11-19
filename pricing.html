@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing & Packages - Blake the Tutor</title>
+  <meta name="description" content="Affordable tutoring packages starting at $55/hour. Flexible payment options, package discounts, and a free consultation to get started.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .page-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 2.5rem 0 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .page-header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+    
+    .page-header p {
+      font-size: 1.2rem;
+      opacity: 0.95;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Subjects Link Section */
+    .subjects-link-section {
+      background: #f8f9fa;
+      padding: 1.5rem;
+      text-align: center;
+      border-bottom: 2px solid #e8e8e8;
+    }
+
+    .subjects-link-section p {
+      color: #666;
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .subjects-link-section a {
+      color: #3498db;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s;
+    }
+
+    .subjects-link-section a:hover {
+      border-bottom-color: #3498db;
+    }
+    
+    /* Pricing Section */
+    .pricing-section {
+      background: white;
+      padding: 3rem 0;
+    }
+    
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .pricing-card {
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      text-align: center;
+      transition: all 0.3s;
+      position: relative;
+    }
+    
+    .pricing-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+    
+    .pricing-card.popular {
+      border: 3px solid #3498db;
+      transform: scale(1.05);
+      background: white;
+    }
+
+    .pricing-card.popular:hover {
+      transform: scale(1.05) translateY(-8px);
+    }
+    
+    .popular-badge {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #3498db;
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    .pricing-card h3 {
+      color: #2c3e50;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+    
+    .price {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #3498db;
+      margin: 1rem 0;
+    }
+    
+    .price-subtext {
+      color: #777;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .features-list {
+      list-style: none;
+      padding: 0;
+      margin: 2rem 0;
+      text-align: left;
+    }
+    
+    .features-list li {
+      padding: 0.75rem 0;
+      color: #666;
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    .features-list li:last-child {
+      border-bottom: none;
+    }
+    
+    .features-list li:before {
+      content: "✓ ";
+      color: #27ae60;
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+    
+    .pricing-cta {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s;
+      width: 100%;
+      margin-top: 1rem;
+    }
+    
+    .pricing-cta:hover {
+      background-color: #2980b9;
+      transform: translateY(-2px);
+    }
+
+    .payment-info {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-radius: 10px;
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .payment-info p {
+      color: #666;
+      font-size: 0.95rem;
+      margin: 0.5rem 0;
+    }
+
+    .payment-info strong {
+      color: #2c3e50;
+    }
+
+    /* What's Included Section */
+    .whats-included-section {
+      background: #f8f9fa;
+      padding: 3rem 0;
+    }
+
+    .included-list {
+      list-style: none;
+      padding: 0;
+      max-width: 800px;
+      margin: 2rem auto 0;
+      background: white;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .included-list li {
+      padding: 1rem 0;
+      color: #666;
+      border-bottom: 1px solid #e8e8e8;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .included-list li:last-child {
+      border-bottom: none;
+    }
+
+    .included-list li:before {
+      content: "✓ ";
+      color: #27ae60;
+      font-weight: bold;
+      margin-right: 0.75rem;
+      font-size: 1.2rem;
+    }
+
+    /* Guarantee Section */
+    .guarantee-section {
+      background: white;
+      padding: 3rem 0;
+    }
+
+    .guarantee-box {
+      max-width: 800px;
+      margin: 2rem auto 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 2.5rem;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    }
+
+    .guarantee-box h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .guarantee-box p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      opacity: 0.95;
+    }
+    
+    /* FAQ Section */
+    .faq-section {
+      background: #f8f9fa;
+      padding: 3rem 0;
+    }
+    
+    .faq-grid {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .faq-item {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      border-left: 4px solid #3498db;
+    }
+    
+    .faq-item h4 {
+      color: #2c3e50;
+      margin-bottom: 0.75rem;
+      font-size: 1.1rem;
+    }
+    
+    .faq-item p {
+      color: #666;
+      line-height: 1.6;
+      margin: 0;
+    }
+    
+    @media (max-width: 768px) {
+      .page-header h1 {
+        font-size: 2rem;
+      }
+      
+      .page-header p {
+        font-size: 1rem;
+      }
+      
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .pricing-card.popular {
+        transform: scale(1);
+      }
+
+      .pricing-card.popular:hover {
+        transform: scale(1) translateY(-8px);
+      }
+      
+      .price {
+        font-size: 2.5rem;
+      }
+
+      .included-list,
+      .guarantee-box {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">Blake the Tutor</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="subjects.html">Subjects</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="schedule.html" class="nav-cta">Book Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <h1>Pricing & Packages</h1>
+      <p>Affordable, flexible tutoring packages designed to fit your budget and learning goals. Start with a free consultation.</p>
+    </div>
+  </div>
+
+  <!-- Subjects Link -->
+  <div class="subjects-link-section">
+    <p>Not sure which subjects I cover? <a href="subjects.html">View all subjects & teaching approach →</a></p>
+  </div>
+
+  <!-- Pricing Section -->
+  <div class="pricing-section">
+    <div class="container">
+      <h2 class="section-title">Choose Your Package</h2>
+      <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto 2rem;">All packages include one-on-one tutoring, personalized lesson plans, and flexible online scheduling.</p>
+      
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Single Session</h3>
+          <div class="price">$55</div>
+          <div class="price-subtext">per hour</div>
+          <ul class="features-list">
+            <li>One-on-one tutoring</li>
+            <li>Personalized lesson plan</li>
+            <li>Homework & test prep help</li>
+            <li>Online via Zoom</li>
+          </ul>
+          <a href="schedule.html"><button class="pricing-cta">Book Session</button></a>
+        </div>
+
+        <div class="pricing-card popular">
+          <div class="popular-badge">Most Popular</div>
+          <h3>5-Session Package</h3>
+          <div class="price">$250</div>
+          <div class="price-subtext">$50/hour • Save $25</div>
+          <ul class="features-list">
+            <li>5 hours of tutoring</li>
+            <li>Everything in Single Session</li>
+            <li>Priority scheduling</li>
+            <li>Progress tracking & feedback</li>
+          </ul>
+          <a href="schedule.html"><button class="pricing-cta">Get Started</button></a>
+        </div>
+
+        <div class="pricing-card">
+          <h3>10-Session Package</h3>
+          <div class="price">$450</div>
+          <div class="price-subtext">$45/hour • Save $100</div>
+          <ul class="features-list">
+            <li>10 hours of tutoring</li>
+            <li>Everything in Single Session</li>
+            <li>Priority scheduling</li>
+            <li>Comprehensive progress reports</li>
+          </ul>
+          <a href="schedule.html"><button class="pricing-cta">Best Value</button></a>
+        </div>
+      </div>
+
+      <div class="payment-info">
+        <p>💳 <strong>Payment Methods:</strong> Venmo or Zelle</p>
+        <p>📅 <strong>First consultation is always FREE</strong> – no obligation, just a friendly chat about your goals</p>
+        <p>⏰ <strong>Packages never expire</strong> – use your sessions at your own pace</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- What's Included Section -->
+  <div class="whats-included-section">
+    <div class="container">
+      <h2 class="section-title">What's Included in Every Session</h2>
+      <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto 1rem;">Whether you book a single session or a package, here's what you get:</p>
+      
+      <ul class="included-list">
+        <li>Customized lesson plans tailored to your specific learning style and goals</li>
+        <li>Digital whiteboard and screen sharing for crystal-clear explanations</li>
+        <li>Practice problems and step-by-step guidance through difficult concepts</li>
+        <li>Homework help and test preparation strategies that actually work</li>
+        <li>Progress tracking and detailed feedback after each session</li>
+        <li>Email support between sessions for quick questions (package students)</li>
+        <li>Flexible scheduling with evening and weekend availability</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Guarantee Section -->
+  <div class="guarantee-section">
+    <div class="container">
+      <h2 class="section-title">My Commitment to You</h2>
+      <div class="guarantee-box">
+        <h3>🎯 Results-Focused Approach</h3>
+        <p>I'm confident in my ability to help you succeed. That's why I offer a free consultation to ensure we're a good fit before you commit. If after our first paid session you don't feel confident about moving forward, I'll refund it – no questions asked.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ Section -->
+  <div class="faq-section">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h4>How long are tutoring sessions?</h4>
+          <p>Standard sessions are 60 minutes, but I also offer 90-minute sessions for deeper dives into complex topics. We can customize session length based on your needs.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h4>Do you offer online tutoring?</h4>
+          <p>Yes! All tutoring is conducted online via Zoom. Online sessions work extremely well thanks to screen sharing tools and digital whiteboards, which actually maximize our time together.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h4>What if I need to cancel or reschedule?</h4>
+          <p>I require 24 hours notice for cancellations or rescheduling. Sessions cancelled with less than 24 hours notice will be charged at the full rate. This ensures I can offer that time to other students.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h4>Can you help with homework and test prep?</h4>
+          <p>Absolutely! I help with homework, test preparation, exam review, and long-term skill building. We'll focus on whatever helps you succeed most, whether that's acing your next test or building foundational understanding.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h4>Do packages expire?</h4>
+          <p>No! Packages never expire. Use your sessions at whatever pace works best for you – whether that's weekly sessions or occasional help before big exams.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h4>What makes your tutoring effective?</h4>
+          <p>I focus on true understanding, not just memorization. We work through problems together, identify specific knowledge gaps, and build problem-solving skills that last well beyond any single exam. Plus, I've been where you are – I know what it takes to turn struggle into success.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4>How do I get started?</h4>
+          <p>Simply schedule a free 30-minute consultation using the link below. We'll discuss your goals, challenges, and create a plan that works for you. No pressure, no obligation – just a friendly conversation about how I can help.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Final CTA -->
+  <div class="final-cta-section">
+    <div class="container">
+      <h2>Ready to Get Started?</h2>
+      <p class="final-cta-text">Schedule your free consultation today. We'll discuss your goals, assess your needs, and create a personalized learning plan.</p>
+      <a href="schedule.html"><button class="cta-button primary large">Schedule Free Consultation</button></a>
+      <p class="cta-subtext">✓ No obligation &nbsp;•&nbsp; ✓ Response within 24 hours &nbsp;•&nbsp; ✓ See if we're a good fit</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-main">
+          <h3>Blake the Tutor</h3>
+          <p>Expert math and science tutoring for students who want to excel.</p>
+        </div>
+        <div class="footer-contact">
+          <h4>Get in Touch</h4>
+          <p>📧 theblakeyerian@gmail.com</p>
+          <p>📱 (425) 892-4390</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="subjects.html">Subjects</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Blake the Tutor. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
