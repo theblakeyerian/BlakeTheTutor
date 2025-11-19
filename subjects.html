@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subjects & Teaching - Blake the Tutor</title>
+  <meta name="description" content="Explore subjects taught by Blake the Tutor: Math, Science, Test Prep & more. Watch free video lessons and see my teaching style.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Page-specific styles */
+    .page-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 2.5rem 0 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .page-header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+    
+    .page-header p {
+      font-size: 1.2rem;
+      opacity: 0.95;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    /* Video Lessons Section */
+    .playlist-section {
+      padding: 2rem 0 2.5rem;
+      background: white;
+    }
+    
+    .playlist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .playlist-card {
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      transition: all 0.3s;
+    }
+    
+    .playlist-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+    
+    .playlist-embed {
+      width: 100%;
+      height: 220px;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 1rem;
+    }
+    
+    .coming-soon-placeholder {
+      width: 100%;
+      height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+      border-radius: 8px;
+      border: 2px dashed #ccc;
+      margin-bottom: 1rem;
+    }
+    
+    .coming-soon-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      opacity: 0.6;
+    }
+    
+    .coming-soon-badge {
+      background: #ffd54f;
+      color: #333;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    .playlist-info h4 {
+      color: #2c3e50;
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+    }
+    
+    .playlist-info p {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    
+    .playlist-link {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: #e74c3c;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    
+    .playlist-link:hover {
+      background: #c0392b;
+      transform: translateY(-2px);
+    }
+    
+    /* Subjects Section */
+    .subjects-section {
+      margin-bottom: 2rem;
+      background: #f8f9fa;
+      padding: 2.5rem 0;
+    }
+    
+    .subjects-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    
+    .subject-card {
+      background: white;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      transition: all 0.3s;
+      border-left: 4px solid #3498db;
+    }
+    
+    .subject-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    }
+    
+    .subject-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .subject-card h3 {
+      color: #2c3e50;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    
+    .subject-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .subject-list li {
+      padding: 0.5rem 0;
+      color: #666;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .subject-list li:last-child {
+      border-bottom: none;
+    }
+    
+    .subject-list li:before {
+      content: "✓ ";
+      color: #27ae60;
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+
+    /* Teaching Approach Section */
+    .teaching-approach-section {
+      background: white;
+      padding: 2.5rem 0;
+    }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .approach-item {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      transition: all 0.3s;
+      border-top: 4px solid #3498db;
+    }
+
+    .approach-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .approach-item h4 {
+      color: #2c3e50;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .approach-item p {
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* Pricing CTA Section */
+    .pricing-cta-section {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .pricing-cta-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .pricing-cta-section p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+
+    .pricing-link-button {
+      display: inline-block;
+      background: white;
+      color: #667eea;
+      padding: 1rem 2.5rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+    }
+
+    .pricing-link-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+    
+    @media (max-width: 768px) {
+      .page-header h1 {
+        font-size: 2rem;
+      }
+      
+      .page-header p {
+        font-size: 1rem;
+      }
+      
+      .subjects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .playlist-grid,
+      .approach-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">Blake the Tutor</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="subjects.html">Subjects</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="schedule.html" class="nav-cta">Book Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <h1>What I Teach</h1>
+      <p>Explore my subjects, watch my teaching style in action, and discover how I help students master challenging material.</p>
+    </div>
+  </div>
+
+  <!-- Video Lessons Section -->
+  <div class="playlist-section">
+    <div class="container">
+      <h2 class="section-title">Free Video Lessons</h2>
+      <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto 2rem;">See my teaching style in action with these free video tutorials. Subscribe to my YouTube channel for weekly lessons!</p>
+      
+      <div class="playlist-grid">
+        <div class="playlist-card">
+          <iframe 
+            class="playlist-embed"
+            src="https://www.youtube.com/embed/HBXGzOEC5to"
+            title="Calculus I"
+            allowfullscreen>
+          </iframe>
+          <div class="playlist-info">
+            <h4>Calculus I</h4>
+            <p>Essential math concepts explained step-by-step, perfect for building a strong foundation in algebra and beyond.</p>
+            <a href="https://youtu.be/HBXGzOEC5to?si=JuJQnKPw9dRsvzxK" class="playlist-link" target="_blank">Watch Full Video</a>
+          </div>
+        </div>
+        
+        <div class="playlist-card">
+          <iframe 
+            class="playlist-embed"
+            src="https://www.youtube.com/embed/videoseries?list=PLXiqi0yQMt-jyztS_Kfvyw8GZVALtgjts"
+            title="Organic Chemistry Playlist"
+            allowfullscreen>
+          </iframe>
+          <div class="playlist-info">
+            <h4>Organic Chemistry Mastery</h4>
+            <p>Master organic chemistry mechanisms, reactions, and concepts with clear step-by-step explanations and visual demonstrations.</p>
+            <a href="https://www.youtube.com/playlist?list=PLXiqi0yQMt-jyztS_Kfvyw8GZVALtgjts" class="playlist-link" target="_blank">Watch Full Playlist</a>
+          </div>
+        </div>
+
+        <div class="playlist-card">
+          <div class="coming-soon-placeholder">
+            <div class="coming-soon-icon">🎥</div>
+            <div class="coming-soon-badge">Coming Soon</div>
+          </div>
+          <div class="playlist-info">
+            <h4>Physics Concepts</h4>
+            <p>Complex physics topics broken down into digestible lessons with real-world applications and examples.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Subjects Section -->
+  <div class="subjects-section">
+    <div class="container">
+      <h2 class="section-title">Subjects I Cover</h2>
+      <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto 1.5rem;">From high school to college level, I specialize in making complex STEM subjects clear and approachable.</p>
+      
+      <div class="subjects-grid">
+        <div class="subject-card">
+          <div class="subject-icon">📐</div>
+          <h3>Mathematics</h3>
+          <ul class="subject-list">
+            <li>Algebra I & II</li>
+            <li>Geometry</li>
+            <li>Trigonometry</li>
+            <li>Pre-Calculus</li>
+            <li>Calculus (AP & College)</li>
+            <li>Linear Algebra</li>
+            <li>Statistics</li>
+          </ul>
+        </div>
+
+        <div class="subject-card">
+          <div class="subject-icon">🔬</div>
+          <h3>Sciences</h3>
+          <ul class="subject-list">
+            <li>Physics (AP & College)</li>
+            <li>General Chemistry</li>
+            <li>Organic Chemistry</li>
+            <li>Biology</li>
+            <li>Electricity & Magnetism</li>
+            <li>Lab Report Help</li>
+          </ul>
+        </div>
+
+        <div class="subject-card">
+          <div class="subject-icon">📝</div>
+          <h3>Test Prep</h3>
+          <ul class="subject-list">
+            <li>SAT Math</li>
+            <li>ACT Math & Science</li>
+            <li>AP Exam Preparation</li>
+            <li>GRE Quantitative</li>
+            <li>College Placement Tests</li>
+          </ul>
+        </div>
+
+        <div class="subject-card">
+          <div class="subject-icon">💻</div>
+          <h3>Additional Subjects</h3>
+          <ul class="subject-list">
+            <li>Programming (Python, Java)</li>
+            <li>Music Theory</li>
+            <li>Economics</li>
+            <li>Series 7 Exam Prep</li>
+            <li>Study Skills & Organization</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Teaching Approach Section -->
+  <div class="teaching-approach-section">
+    <div class="container">
+      <h2 class="section-title">My Teaching Approach</h2>
+      <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto 2rem;">Every student is different. Here's how I ensure you get the personalized support you need to succeed.</p>
+      
+      <div class="approach-grid">
+        <div class="approach-item">
+          <h4>📋 Diagnostic Assessment</h4>
+          <p>We start by identifying your specific knowledge gaps and learning style to create a targeted plan.</p>
+        </div>
+        <div class="approach-item">
+          <h4>🎯 Personalized Plan</h4>
+          <p>I create a custom learning path focused on your goals, timeline, and the areas where you need the most help.</p>
+        </div>
+        <div class="approach-item">
+          <h4>💡 Concept Mastery</h4>
+          <p>We build deep understanding, not just memorization. You'll learn the "why" behind every concept.</p>
+        </div>
+        <div class="approach-item">
+          <h4>📈 Progress Tracking</h4>
+          <p>Regular check-ins and feedback to ensure you're improving and staying on track toward your goals.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pricing CTA Section -->
+  <div class="pricing-cta-section">
+    <div class="container">
+      <h2>Like What You See?</h2>
+      <p>Check out my flexible pricing packages designed to fit your budget and learning goals.</p>
+      <a href="pricing.html" class="pricing-link-button">View Pricing & Packages →</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-main">
+          <h3>Blake the Tutor</h3>
+          <p>Expert math and science tutoring for students who want to excel.</p>
+        </div>
+        <div class="footer-contact">
+          <h4>Get in Touch</h4>
+          <p>📧 theblakeyerian@gmail.com</p>
+          <p>📱 (425) 892-4390</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="subjects.html">Subjects</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Blake the Tutor. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
